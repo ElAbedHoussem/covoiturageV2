@@ -228,7 +228,7 @@
         <!--InscriptionVC-->
         <scene sceneID="l5z-it-VWH">
             <objects>
-                <viewController storyboardIdentifier="inscri" id="kBT-n9-Tl3" customClass="InscriptionVC" customModule="covoiturageV1_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InscriptionVC" id="kBT-n9-Tl3" customClass="InscriptionVC" customModule="covoiturageV1_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IpY-YN-teD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -327,9 +327,24 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconProfil" translatesAutoresizingMaskIntoConstraints="NO" id="Df8-2G-q5t">
+                                <rect key="frame" x="235" y="393" width="124" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="choisir votre image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAZ-ym-noL">
+                                <rect key="frame" x="16" y="430" width="153" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="9lC-Pj-eYI"/>
+                                    <constraint firstAttribute="height" constant="39" id="rM8-No-JyB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.72442561390000004" green="0.76452153919999999" blue="0.78041446209999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="QAZ-ym-noL" firstAttribute="top" secondItem="EZM-ty-rjv" secondAttribute="bottom" constant="77" id="0qa-sk-Um9"/>
                             <constraint firstItem="159-Fq-Cp7" firstAttribute="leading" secondItem="QTV-SP-bnA" secondAttribute="leading" constant="16" id="3hI-vY-bJq"/>
                             <constraint firstItem="QTV-SP-bnA" firstAttribute="trailing" secondItem="xBH-qh-ZGp" secondAttribute="trailing" constant="28" id="5e4-E7-I7Q"/>
                             <constraint firstItem="QTV-SP-bnA" firstAttribute="trailing" secondItem="guU-Zl-3F7" secondAttribute="trailing" constant="28" id="6Y7-Mc-hGa"/>
@@ -358,11 +373,13 @@
                             <constraint firstItem="E6V-Vy-Qcy" firstAttribute="leading" secondItem="QTV-SP-bnA" secondAttribute="leading" constant="16" id="cca-YU-it1"/>
                             <constraint firstItem="guU-Zl-3F7" firstAttribute="top" secondItem="snN-ti-nXA" secondAttribute="bottom" constant="47" id="dna-QB-YOA"/>
                             <constraint firstItem="Ewe-t8-raE" firstAttribute="leading" secondItem="EZM-ty-rjv" secondAttribute="trailing" constant="2" id="giN-Wg-krR"/>
+                            <constraint firstItem="QAZ-ym-noL" firstAttribute="leading" secondItem="QTV-SP-bnA" secondAttribute="leading" constant="16" id="huf-Ad-DsV"/>
                             <constraint firstItem="HEe-6a-wwC" firstAttribute="top" secondItem="xBH-qh-ZGp" secondAttribute="bottom" constant="15" id="jdL-ku-jdn"/>
                             <constraint firstItem="xBH-qh-ZGp" firstAttribute="top" secondItem="SPG-V5-ZW2" secondAttribute="bottom" constant="15" id="lZ9-KI-ddF"/>
                             <constraint firstItem="Ewe-t8-raE" firstAttribute="top" secondItem="HEe-6a-wwC" secondAttribute="bottom" constant="15" id="m9p-EU-dFe"/>
                             <constraint firstItem="9Z6-LL-Ylp" firstAttribute="top" secondItem="E6V-Vy-Qcy" secondAttribute="bottom" constant="15" id="plF-zU-nSH"/>
                             <constraint firstItem="Dij-h7-1tC" firstAttribute="top" secondItem="EZM-ty-rjv" secondAttribute="bottom" constant="216" id="qfQ-3W-H80"/>
+                            <constraint firstItem="Dij-h7-1tC" firstAttribute="top" secondItem="QAZ-ym-noL" secondAttribute="bottom" constant="100" id="qu7-CQ-KGc"/>
                             <constraint firstItem="QTV-SP-bnA" firstAttribute="trailing" secondItem="Ewe-t8-raE" secondAttribute="trailing" constant="28" id="s0Z-8A-HBe"/>
                             <constraint firstItem="FCp-od-N3v" firstAttribute="top" secondItem="159-Fq-Cp7" secondAttribute="bottom" constant="15" id="sKo-h9-uZ4"/>
                             <constraint firstItem="xBH-qh-ZGp" firstAttribute="top" secondItem="SPG-V5-ZW2" secondAttribute="bottom" constant="15" id="vYG-dK-ujr"/>
@@ -372,10 +389,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QTV-SP-bnA"/>
                     </view>
+                    <connections>
+                        <outlet property="profilImage" destination="Df8-2G-q5t" id="2f2-5s-dM2"/>
+                        <outlet property="profilPicture" destination="Df8-2G-q5t" id="zfc-QJ-M6F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdR-lQ-stI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1058" y="424"/>
+            <point key="canvasLocation" x="-1058.4000000000001" y="423.23838080959524"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="7ZW-EW-cge">
@@ -430,6 +451,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="iconProfil" width="1024" height="1024"/>
         <image name="knowstartup-carpooling1" width="1920" height="1080"/>
         <image name="smackBurger" width="40" height="40"/>
     </resources>

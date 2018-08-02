@@ -23,7 +23,7 @@ class FirstVC: UIViewController {
     }
     @IBAction func onInscriptionPressed(_ sender: UIButton) {
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-        let inscriptionVC = mainStoryBoard.instantiateViewController(withIdentifier: "inscri") as! InscriptionVC
+        let inscriptionVC = mainStoryBoard.instantiateViewController(withIdentifier: "InscriptionVC") as! InscriptionVC
         self.navigationController?.pushViewController(inscriptionVC, animated: true)
     }
     
