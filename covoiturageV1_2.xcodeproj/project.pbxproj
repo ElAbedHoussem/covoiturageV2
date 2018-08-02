@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		9E3661D540BA1C3E4B749E97 /* Pods_covoiturageV1_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71ADE4D2AFCB17717B0D256 /* Pods_covoiturageV1_2.framework */; };
 		B5280E8B21120AD500A0D22A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5280E8921120AD500A0D22A /* SWRevealViewController.m */; };
+		B5280E8E2112100600A0D22A /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5280E8D2112100600A0D22A /* FirstVC.swift */; };
+		B5280E902112102D00A0D22A /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5280E8F2112102D00A0D22A /* AuthVC.swift */; };
+		B5280E922112105300A0D22A /* InscriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5280E912112105300A0D22A /* InscriptionVC.swift */; };
 		B583E79D2112E92B0077A01F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B583E79C2112E92B0077A01F /* AppDelegate.swift */; };
-		B583E79F2112E92B0077A01F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B583E79E2112E92B0077A01F /* ViewController.swift */; };
 		B583E7A22112E92B0077A01F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B583E7A02112E92B0077A01F /* Main.storyboard */; };
 		B583E7A52112E92B0077A01F /* covoiturageV1_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B583E7A32112E92B0077A01F /* covoiturageV1_2.xcdatamodeld */; };
 		B583E7A72112E92C0077A01F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B583E7A62112E92B0077A01F /* Assets.xcassets */; };
 		B583E7AA2112E92C0077A01F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B583E7A82112E92C0077A01F /* LaunchScreen.storyboard */; };
+		B5B5A99C2112FFC8003E0E75 /* CircuitListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5A99B2112FFC8003E0E75 /* CircuitListVC.swift */; };
+		B5B5A99E211300EC003E0E75 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5A99D211300EC003E0E75 /* MenuVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,14 +26,18 @@
 		B5280E8821120AD400A0D22A /* covoiturageV1_2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "covoiturageV1_2-Bridging-Header.h"; sourceTree = "<group>"; };
 		B5280E8921120AD500A0D22A /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		B5280E8A21120AD500A0D22A /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		B5280E8D2112100600A0D22A /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
+		B5280E8F2112102D00A0D22A /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		B5280E912112105300A0D22A /* InscriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InscriptionVC.swift; sourceTree = "<group>"; };
 		B583E7992112E92B0077A01F /* covoiturageV1_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = covoiturageV1_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B583E79C2112E92B0077A01F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B583E79E2112E92B0077A01F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B583E7A12112E92B0077A01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B583E7A42112E92B0077A01F /* covoiturageV1_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = covoiturageV1_2.xcdatamodel; sourceTree = "<group>"; };
 		B583E7A62112E92B0077A01F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B583E7A92112E92C0077A01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B583E7AB2112E92C0077A01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5B5A99B2112FFC8003E0E75 /* CircuitListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitListVC.swift; sourceTree = "<group>"; };
+		B5B5A99D211300EC003E0E75 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		CB7EE4E961AC71ACD9135830 /* Pods-covoiturageV1_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-covoiturageV1_2.release.xcconfig"; path = "Pods/Target Support Files/Pods-covoiturageV1_2/Pods-covoiturageV1_2.release.xcconfig"; sourceTree = "<group>"; };
 		E71ADE4D2AFCB17717B0D256 /* Pods_covoiturageV1_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_covoiturageV1_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,6 +81,18 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B5280E8C21120FEE00A0D22A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B5280E8D2112100600A0D22A /* FirstVC.swift */,
+				B5280E8F2112102D00A0D22A /* AuthVC.swift */,
+				B5280E912112105300A0D22A /* InscriptionVC.swift */,
+				B5B5A99B2112FFC8003E0E75 /* CircuitListVC.swift */,
+				B5B5A99D211300EC003E0E75 /* MenuVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		B583E7902112E92B0077A01F = {
 			isa = PBXGroup;
 			children = (
@@ -94,9 +114,9 @@
 		B583E79B2112E92B0077A01F /* covoiturageV1_2 */ = {
 			isa = PBXGroup;
 			children = (
+				B5280E8C21120FEE00A0D22A /* Controllers */,
 				B5280E8721120A7900A0D22A /* Supporting Files */,
 				B583E79C2112E92B0077A01F /* AppDelegate.swift */,
-				B583E79E2112E92B0077A01F /* ViewController.swift */,
 				B583E7A02112E92B0077A01F /* Main.storyboard */,
 				B583E7A62112E92B0077A01F /* Assets.xcassets */,
 				B583E7A82112E92C0077A01F /* LaunchScreen.storyboard */,
@@ -226,9 +246,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5280E902112102D00A0D22A /* AuthVC.swift in Sources */,
 				B583E7A52112E92B0077A01F /* covoiturageV1_2.xcdatamodeld in Sources */,
-				B583E79F2112E92B0077A01F /* ViewController.swift in Sources */,
+				B5280E922112105300A0D22A /* InscriptionVC.swift in Sources */,
 				B583E79D2112E92B0077A01F /* AppDelegate.swift in Sources */,
+				B5B5A99E211300EC003E0E75 /* MenuVC.swift in Sources */,
+				B5280E8E2112100600A0D22A /* FirstVC.swift in Sources */,
+				B5B5A99C2112FFC8003E0E75 /* CircuitListVC.swift in Sources */,
 				B5280E8B21120AD500A0D22A /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
