@@ -11,4 +11,6 @@ target 'covoiturageV1_2' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'Socket.IO-Client-Swift'
+  pod 'FBSDKLoginKit'
+    
 end

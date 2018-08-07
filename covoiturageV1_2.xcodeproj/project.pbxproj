@@ -12,6 +12,8 @@
 		B5280E8E2112100600A0D22A /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5280E8D2112100600A0D22A /* FirstVC.swift */; };
 		B5280E902112102D00A0D22A /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5280E8F2112102D00A0D22A /* AuthVC.swift */; };
 		B5280E922112105300A0D22A /* InscriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5280E912112105300A0D22A /* InscriptionVC.swift */; };
+		B560D41E2118A9EB000E0E46 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B560D41C2118A9E9000E0E46 /* FBSDKCoreKit.framework */; };
+		B560D41F2118A9EB000E0E46 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B560D41D2118A9EA000E0E46 /* FBSDKLoginKit.framework */; };
 		B583E79D2112E92B0077A01F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B583E79C2112E92B0077A01F /* AppDelegate.swift */; };
 		B583E7A22112E92B0077A01F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B583E7A02112E92B0077A01F /* Main.storyboard */; };
 		B583E7A52112E92B0077A01F /* covoiturageV1_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B583E7A32112E92B0077A01F /* covoiturageV1_2.xcdatamodeld */; };
@@ -19,6 +21,10 @@
 		B583E7AA2112E92C0077A01F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B583E7A82112E92C0077A01F /* LaunchScreen.storyboard */; };
 		B5B5A99C2112FFC8003E0E75 /* CircuitListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5A99B2112FFC8003E0E75 /* CircuitListVC.swift */; };
 		B5B5A99E211300EC003E0E75 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5A99D211300EC003E0E75 /* MenuVC.swift */; };
+		B5DFEAF2211857CE0057784C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DFEAF1211857CE0057784C /* MenuView.swift */; };
+		B5DFEAF5211882FE0057784C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DFEAF4211882FE0057784C /* UIColorExtension.swift */; };
+		B5DFEAF7211885310057784C /* SearchCircuitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DFEAF6211885310057784C /* SearchCircuitVC.swift */; };
+		B5DFEAFB211886A90057784C /* AddACircuitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DFEAFA211886A90057784C /* AddACircuitVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,8 @@
 		B5280E8D2112100600A0D22A /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		B5280E8F2112102D00A0D22A /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		B5280E912112105300A0D22A /* InscriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InscriptionVC.swift; sourceTree = "<group>"; };
+		B560D41C2118A9E9000E0E46 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		B560D41D2118A9EA000E0E46 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		B583E7992112E92B0077A01F /* covoiturageV1_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = covoiturageV1_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B583E79C2112E92B0077A01F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B583E7A12112E92B0077A01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,6 +46,10 @@
 		B583E7AB2112E92C0077A01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5B5A99B2112FFC8003E0E75 /* CircuitListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitListVC.swift; sourceTree = "<group>"; };
 		B5B5A99D211300EC003E0E75 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		B5DFEAF1211857CE0057784C /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		B5DFEAF4211882FE0057784C /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		B5DFEAF6211885310057784C /* SearchCircuitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCircuitVC.swift; sourceTree = "<group>"; };
+		B5DFEAFA211886A90057784C /* AddACircuitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddACircuitVC.swift; sourceTree = "<group>"; };
 		CB7EE4E961AC71ACD9135830 /* Pods-covoiturageV1_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-covoiturageV1_2.release.xcconfig"; path = "Pods/Target Support Files/Pods-covoiturageV1_2/Pods-covoiturageV1_2.release.xcconfig"; sourceTree = "<group>"; };
 		E71ADE4D2AFCB17717B0D256 /* Pods_covoiturageV1_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_covoiturageV1_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -48,6 +60,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E3661D540BA1C3E4B749E97 /* Pods_covoiturageV1_2.framework in Frameworks */,
+				B560D41E2118A9EB000E0E46 /* FBSDKCoreKit.framework in Frameworks */,
+				B560D41F2118A9EB000E0E46 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +103,8 @@
 				B5280E912112105300A0D22A /* InscriptionVC.swift */,
 				B5B5A99B2112FFC8003E0E75 /* CircuitListVC.swift */,
 				B5B5A99D211300EC003E0E75 /* MenuVC.swift */,
+				B5DFEAF6211885310057784C /* SearchCircuitVC.swift */,
+				B5DFEAFA211886A90057784C /* AddACircuitVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -114,6 +130,8 @@
 		B583E79B2112E92B0077A01F /* covoiturageV1_2 */ = {
 			isa = PBXGroup;
 			children = (
+				B5DFEAF3211882E00057784C /* Extensions */,
+				B5DFEAF0211857830057784C /* View */,
 				B5280E8C21120FEE00A0D22A /* Controllers */,
 				B5280E8721120A7900A0D22A /* Supporting Files */,
 				B583E79C2112E92B0077A01F /* AppDelegate.swift */,
@@ -122,8 +140,26 @@
 				B583E7A82112E92C0077A01F /* LaunchScreen.storyboard */,
 				B583E7AB2112E92C0077A01F /* Info.plist */,
 				B583E7A32112E92B0077A01F /* covoiturageV1_2.xcdatamodeld */,
+				B560D41C2118A9E9000E0E46 /* FBSDKCoreKit.framework */,
+				B560D41D2118A9EA000E0E46 /* FBSDKLoginKit.framework */,
 			);
 			path = covoiturageV1_2;
+			sourceTree = "<group>";
+		};
+		B5DFEAF0211857830057784C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B5DFEAF1211857CE0057784C /* MenuView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B5DFEAF3211882E00057784C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B5DFEAF4211882FE0057784C /* UIColorExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +241,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-covoiturageV1_2/Pods-covoiturageV1_2-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -212,6 +251,9 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -246,12 +288,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5DFEAF7211885310057784C /* SearchCircuitVC.swift in Sources */,
 				B5280E902112102D00A0D22A /* AuthVC.swift in Sources */,
 				B583E7A52112E92B0077A01F /* covoiturageV1_2.xcdatamodeld in Sources */,
 				B5280E922112105300A0D22A /* InscriptionVC.swift in Sources */,
 				B583E79D2112E92B0077A01F /* AppDelegate.swift in Sources */,
+				B5DFEAF2211857CE0057784C /* MenuView.swift in Sources */,
 				B5B5A99E211300EC003E0E75 /* MenuVC.swift in Sources */,
 				B5280E8E2112100600A0D22A /* FirstVC.swift in Sources */,
+				B5DFEAFB211886A90057784C /* AddACircuitVC.swift in Sources */,
+				B5DFEAF5211882FE0057784C /* UIColorExtension.swift in Sources */,
 				B5B5A99C2112FFC8003E0E75 /* CircuitListVC.swift in Sources */,
 				B5280E8B21120AD500A0D22A /* SWRevealViewController.m in Sources */,
 			);
@@ -393,6 +439,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/covoiturageV1_2",
+				);
 				INFOPLIST_FILE = covoiturageV1_2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Revision.covoiturageV1-2";
@@ -411,6 +461,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/covoiturageV1_2",
+				);
 				INFOPLIST_FILE = covoiturageV1_2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Revision.covoiturageV1-2";
