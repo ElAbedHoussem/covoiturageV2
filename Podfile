@@ -9,8 +9,12 @@ target 'covoiturageV1_2' do
 
   # Pods for covoiturageV1_2
   pod 'Alamofire'
-  pod 'SwiftyJSON'
-  pod 'Socket.IO-Client-Swift'
   pod 'FBSDKLoginKit'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
     
 end

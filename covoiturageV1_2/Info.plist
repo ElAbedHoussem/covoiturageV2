@@ -44,6 +44,7 @@
 	
     
     
+
     <key>CFBundleURLTypes</key>
     <array>
         <dict>
@@ -54,16 +55,20 @@
         </dict>
     </array>
     <key>FacebookAppID</key>
-    <string>{your-app-id}</string>
+    <string>864350673765381</string>
     <key>FacebookDisplayName</key>
     <string>covoiturage</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>fbapi</string>
-        <string>fb-messenger-share-api</string>
-        <string>fbauth2</string>
-        <string>fbshareextension</string>
-    </array>
+
+
+
+
+   <key>LSApplicationQueriesSchemes</key>
+   <array>
+       <string>fbapi</string>
+       <string>fb-messenger-share-api</string>
+       <string>fbauth2</string>
+       <string>fbshareextension</string>
+   </array>
     
     
     

@@ -14,11 +14,14 @@
 		B5280E922112105300A0D22A /* InscriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5280E912112105300A0D22A /* InscriptionVC.swift */; };
 		B560D41E2118A9EB000E0E46 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B560D41C2118A9E9000E0E46 /* FBSDKCoreKit.framework */; };
 		B560D41F2118A9EB000E0E46 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B560D41D2118A9EA000E0E46 /* FBSDKLoginKit.framework */; };
+		B560D4212119D033000E0E46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B560D4202119D033000E0E46 /* GoogleService-Info.plist */; };
+		B560D4242119D292000E0E46 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B560D4232119D292000E0E46 /* DataService.swift */; };
 		B583E79D2112E92B0077A01F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B583E79C2112E92B0077A01F /* AppDelegate.swift */; };
 		B583E7A22112E92B0077A01F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B583E7A02112E92B0077A01F /* Main.storyboard */; };
 		B583E7A52112E92B0077A01F /* covoiturageV1_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B583E7A32112E92B0077A01F /* covoiturageV1_2.xcdatamodeld */; };
 		B583E7A72112E92C0077A01F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B583E7A62112E92B0077A01F /* Assets.xcassets */; };
 		B583E7AA2112E92C0077A01F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B583E7A82112E92C0077A01F /* LaunchScreen.storyboard */; };
+		B59D7DE32119E5EA009DB04F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59D7DE22119E5EA009DB04F /* AuthService.swift */; };
 		B5B5A99C2112FFC8003E0E75 /* CircuitListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5A99B2112FFC8003E0E75 /* CircuitListVC.swift */; };
 		B5B5A99E211300EC003E0E75 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5A99D211300EC003E0E75 /* MenuVC.swift */; };
 		B5DFEAF2211857CE0057784C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DFEAF1211857CE0057784C /* MenuView.swift */; };
@@ -37,6 +40,8 @@
 		B5280E912112105300A0D22A /* InscriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InscriptionVC.swift; sourceTree = "<group>"; };
 		B560D41C2118A9E9000E0E46 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B560D41D2118A9EA000E0E46 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B560D4202119D033000E0E46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B560D4232119D292000E0E46 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		B583E7992112E92B0077A01F /* covoiturageV1_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = covoiturageV1_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B583E79C2112E92B0077A01F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B583E7A12112E92B0077A01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,6 +49,7 @@
 		B583E7A62112E92B0077A01F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B583E7A92112E92C0077A01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B583E7AB2112E92C0077A01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B59D7DE22119E5EA009DB04F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B5B5A99B2112FFC8003E0E75 /* CircuitListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitListVC.swift; sourceTree = "<group>"; };
 		B5B5A99D211300EC003E0E75 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		B5DFEAF1211857CE0057784C /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -109,6 +115,15 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		B560D4222119D281000E0E46 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B560D4232119D292000E0E46 /* DataService.swift */,
+				B59D7DE22119E5EA009DB04F /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		B583E7902112E92B0077A01F = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +145,8 @@
 		B583E79B2112E92B0077A01F /* covoiturageV1_2 */ = {
 			isa = PBXGroup;
 			children = (
+				B560D4222119D281000E0E46 /* Services */,
+				B560D4202119D033000E0E46 /* GoogleService-Info.plist */,
 				B5DFEAF3211882E00057784C /* Extensions */,
 				B5DFEAF0211857830057784C /* View */,
 				B5280E8C21120FEE00A0D22A /* Controllers */,
@@ -225,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B583E7AA2112E92C0077A01F /* LaunchScreen.storyboard in Resources */,
+				B560D4212119D033000E0E46 /* GoogleService-Info.plist in Resources */,
 				B583E7A72112E92C0077A01F /* Assets.xcassets in Resources */,
 				B583E7A22112E92B0077A01F /* Main.storyboard in Resources */,
 			);
@@ -244,9 +262,12 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
-				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -254,9 +275,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -297,7 +321,9 @@
 				B5B5A99E211300EC003E0E75 /* MenuVC.swift in Sources */,
 				B5280E8E2112100600A0D22A /* FirstVC.swift in Sources */,
 				B5DFEAFB211886A90057784C /* AddACircuitVC.swift in Sources */,
+				B59D7DE32119E5EA009DB04F /* AuthService.swift in Sources */,
 				B5DFEAF5211882FE0057784C /* UIColorExtension.swift in Sources */,
+				B560D4242119D292000E0E46 /* DataService.swift in Sources */,
 				B5B5A99C2112FFC8003E0E75 /* CircuitListVC.swift in Sources */,
 				B5280E8B21120AD500A0D22A /* SWRevealViewController.m in Sources */,
 			);
