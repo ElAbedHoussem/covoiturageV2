@@ -16,21 +16,21 @@ class MenuVC: UIViewController {
 
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
     }
-
+    //this method make possible to go to the CircuitList View Controller
     @IBAction func onListAdvertsPressed(_ sender: UIButton) {
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
         let listAdvertsVC = mainStoryBoard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
         self.navigationController?.pushViewController(listAdvertsVC, animated: true)
     }
     
-    
+    //this method make possible to go to the SearchCircuitVC View Controller
     @IBAction func onSearchCircuitPressed(_ sender: UIButton) {
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
         let searchCircuitVC = mainStoryBoard.instantiateViewController(withIdentifier: "SWRevealViewControllerSearch") as! SWRevealViewController
         self.navigationController?.pushViewController(searchCircuitVC, animated: true)
     }
     
-    
+        //this method make possible to go to the AddACircuit View Controller
     @IBAction func onPostCircuitPressed(_ sender: UIButton) {
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
         let postCircuitVC = mainStoryBoard.instantiateViewController(withIdentifier: "SWRevealViewControllerAdd") as! SWRevealViewController

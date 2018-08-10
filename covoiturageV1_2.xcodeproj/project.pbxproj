@@ -24,6 +24,7 @@
 		B59D7DE32119E5EA009DB04F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59D7DE22119E5EA009DB04F /* AuthService.swift */; };
 		B5B5A99C2112FFC8003E0E75 /* CircuitListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5A99B2112FFC8003E0E75 /* CircuitListVC.swift */; };
 		B5B5A99E211300EC003E0E75 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5A99D211300EC003E0E75 /* MenuVC.swift */; };
+		B5CC62EB211C3931006BC2CC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC62EA211C3931006BC2CC /* User.swift */; };
 		B5DFEAF2211857CE0057784C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DFEAF1211857CE0057784C /* MenuView.swift */; };
 		B5DFEAF5211882FE0057784C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DFEAF4211882FE0057784C /* UIColorExtension.swift */; };
 		B5DFEAF7211885310057784C /* SearchCircuitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DFEAF6211885310057784C /* SearchCircuitVC.swift */; };
@@ -52,6 +53,7 @@
 		B59D7DE22119E5EA009DB04F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B5B5A99B2112FFC8003E0E75 /* CircuitListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitListVC.swift; sourceTree = "<group>"; };
 		B5B5A99D211300EC003E0E75 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		B5CC62EA211C3931006BC2CC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B5DFEAF1211857CE0057784C /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		B5DFEAF4211882FE0057784C /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		B5DFEAF6211885310057784C /* SearchCircuitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCircuitVC.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		B583E79B2112E92B0077A01F /* covoiturageV1_2 */ = {
 			isa = PBXGroup;
 			children = (
+				B5CC62E9211C3902006BC2CC /* Models */,
 				B560D4222119D281000E0E46 /* Services */,
 				B560D4202119D033000E0E46 /* GoogleService-Info.plist */,
 				B5DFEAF3211882E00057784C /* Extensions */,
@@ -161,6 +164,14 @@
 				B560D41D2118A9EA000E0E46 /* FBSDKLoginKit.framework */,
 			);
 			path = covoiturageV1_2;
+			sourceTree = "<group>";
+		};
+		B5CC62E9211C3902006BC2CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5CC62EA211C3931006BC2CC /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B5DFEAF0211857830057784C /* View */ = {
@@ -320,6 +331,7 @@
 				B5DFEAF2211857CE0057784C /* MenuView.swift in Sources */,
 				B5B5A99E211300EC003E0E75 /* MenuVC.swift in Sources */,
 				B5280E8E2112100600A0D22A /* FirstVC.swift in Sources */,
+				B5CC62EB211C3931006BC2CC /* User.swift in Sources */,
 				B5DFEAFB211886A90057784C /* AddACircuitVC.swift in Sources */,
 				B59D7DE32119E5EA009DB04F /* AuthService.swift in Sources */,
 				B5DFEAF5211882FE0057784C /* UIColorExtension.swift in Sources */,

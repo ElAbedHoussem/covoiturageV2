@@ -8,8 +8,13 @@
 
 import Foundation
 import FirebaseDatabase
+import  FirebaseStorage
+//get the database reference from FirebaseDatabase
 let DB_BASE = Database.database().reference()
+///get the storage reference from FirebaseStorage
+let DB_STORAGE = Storage.storage().reference()
 class DataService {
+    // create references for evry single child in Firebase
     static let instance  = DataService()
     private var _REF_BASE = DB_BASE
     private var _REF_USERS = DB_BASE.child("users")
@@ -19,7 +24,8 @@ class DataService {
       private var _REF_STREETS = DB_BASE.child("street")
      private var _REF_CITIES = DB_BASE.child("cities")
      private var _REF_GOVERNORATES = DB_BASE.child("governorates")
-    
+    private var _REF_PICTURE = DB_STORAGE.child("images")
+
     
     
     var REF_BASE : DatabaseReference {
@@ -35,9 +41,20 @@ class DataService {
         return _REF_MESSAGES
     }
     
-    
+
+    //create a Firebase user in firebase/Auth
     func createDBUser(uid: String, userData: Dictionary <String,Any>){
         REF_USERS.child(uid).setValue(userData)
+    }
+    // create an object user and storage him in Firebase/Database
+    func createUser(email: String , password: String,firstName :String, lastName : String , phoneNumber : Double, age : Int, picture : Data){
+        //generate a random userkey to index the user
+        let userID = REF_USERS.childByAutoId().key
+        print(_REF_PICTURE.putData(picture))
+        //create a table with the data from the method
+        let userData = ["userID": userID , "email" : email , "password" : password,"firstName" : firstName , "lastName" : lastName ,"phoneNumber" : phoneNumber,"age" : age] as [String : Any]
+        // save the userData information in the child "users"
+        REF_USERS.child(userID).setValue(userData)
     }
     
 }

@@ -22,13 +22,17 @@ class AuthVC: UIViewController  {
 
         // Do any additional setup after loading the view.
     }
+    //in the Auth View controller when we press on the connexion  button , if all Field text are not empty, then we can call loginUser method
+    // if the user existe and we have the good mail and password then we send him th CircuitList View Controller ( SWRevalViewController
     @IBAction func onConnectionPressed(_ sender: UIButton) {
         if (emailTextField.text != nil && passwordTextField.text != nil) {
             AuthService.instance.loginUser(withEmail: emailTextField.text!, andPassword: passwordTextField.text!, loginComplete: { (succes, loginError) in
                 if succes{
+
                     let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
                     let swRevealViewController = mainStoryBoard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
                     self.navigationController?.pushViewController(swRevealViewController, animated: true)
+
                 }
                 else{
                     print (String(describing: loginError?.localizedDescription))
@@ -38,7 +42,10 @@ class AuthVC: UIViewController  {
        
     }
     
-    
+
+
+    //not used for the moment
+
     @objc func handleSignInWithFacebookButtonTapped() {
         
         let loginManager = LoginManager()
@@ -55,7 +62,7 @@ class AuthVC: UIViewController  {
         }
     }
     
-    
+    //not used for the moment
     fileprivate func signIntoFirebase() {
         guard let authenticationToken = AccessToken.current?.authenticationToken else { return }
         let credential = FacebookAuthProvider.credential(withAccessToken: authenticationToken)

@@ -10,6 +10,7 @@ import UIKit
 @IBDesignable
 class MenuView: UIView {
 
+    //this class help us the make the menu Dessign 
     @IBInspectable var topColor = UIColor.blue {
         didSet {
             self.setNeedsLayout()
