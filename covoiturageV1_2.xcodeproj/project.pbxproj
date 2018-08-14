@@ -12,6 +12,13 @@
 		B5280E8E2112100600A0D22A /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5280E8D2112100600A0D22A /* FirstVC.swift */; };
 		B5280E902112102D00A0D22A /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5280E8F2112102D00A0D22A /* AuthVC.swift */; };
 		B5280E922112105300A0D22A /* InscriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5280E912112105300A0D22A /* InscriptionVC.swift */; };
+		B536C048211DC4B800808318 /* PopupContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536C047211DC4B800808318 /* PopupContainer.swift */; };
+		B536C04A211DC4C200808318 /* CalendarPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536C049211DC4C100808318 /* CalendarPopUp.swift */; };
+		B536C04C211DC4C800808318 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536C04B211DC4C800808318 /* CellView.swift */; };
+		B536C04E211DC4CD00808318 /* AnimationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536C04D211DC4CD00808318 /* AnimationClass.swift */; };
+		B536C050211DC4DB00808318 /* CalendarPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = B536C04F211DC4DB00808318 /* CalendarPopUp.xib */; };
+		B536C052211DC4E200808318 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B536C051211DC4E200808318 /* CellView.xib */; };
+		B536C054211DC4EA00808318 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536C053211DC4EA00808318 /* Extensions.swift */; };
 		B560D41E2118A9EB000E0E46 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B560D41C2118A9E9000E0E46 /* FBSDKCoreKit.framework */; };
 		B560D41F2118A9EB000E0E46 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B560D41D2118A9EA000E0E46 /* FBSDKLoginKit.framework */; };
 		B560D4212119D033000E0E46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B560D4202119D033000E0E46 /* GoogleService-Info.plist */; };
@@ -39,6 +46,13 @@
 		B5280E8D2112100600A0D22A /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		B5280E8F2112102D00A0D22A /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		B5280E912112105300A0D22A /* InscriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InscriptionVC.swift; sourceTree = "<group>"; };
+		B536C047211DC4B800808318 /* PopupContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupContainer.swift; sourceTree = "<group>"; };
+		B536C049211DC4C100808318 /* CalendarPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarPopUp.swift; sourceTree = "<group>"; };
+		B536C04B211DC4C800808318 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		B536C04D211DC4CD00808318 /* AnimationClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationClass.swift; sourceTree = "<group>"; };
+		B536C04F211DC4DB00808318 /* CalendarPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarPopUp.xib; sourceTree = "<group>"; };
+		B536C051211DC4E200808318 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
+		B536C053211DC4EA00808318 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B560D41C2118A9E9000E0E46 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B560D41D2118A9EA000E0E46 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		B560D4202119D033000E0E46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -106,6 +120,7 @@
 		B5280E8C21120FEE00A0D22A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B536C046211DC44600808318 /* Calendar */,
 				B5280E8D2112100600A0D22A /* FirstVC.swift */,
 				B5280E8F2112102D00A0D22A /* AuthVC.swift */,
 				B5280E912112105300A0D22A /* InscriptionVC.swift */,
@@ -115,6 +130,21 @@
 				B5DFEAFA211886A90057784C /* AddACircuitVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B536C046211DC44600808318 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				B536C053211DC4EA00808318 /* Extensions.swift */,
+				B536C051211DC4E200808318 /* CellView.xib */,
+				B536C04F211DC4DB00808318 /* CalendarPopUp.xib */,
+				B536C04D211DC4CD00808318 /* AnimationClass.swift */,
+				B536C04B211DC4C800808318 /* CellView.swift */,
+				B536C049211DC4C100808318 /* CalendarPopUp.swift */,
+				B536C047211DC4B800808318 /* PopupContainer.swift */,
+			);
+			name = Calendar;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		B560D4222119D281000E0E46 /* Services */ = {
@@ -255,6 +285,8 @@
 				B583E7AA2112E92C0077A01F /* LaunchScreen.storyboard in Resources */,
 				B560D4212119D033000E0E46 /* GoogleService-Info.plist in Resources */,
 				B583E7A72112E92C0077A01F /* Assets.xcassets in Resources */,
+				B536C050211DC4DB00808318 /* CalendarPopUp.xib in Resources */,
+				B536C052211DC4E200808318 /* CellView.xib in Resources */,
 				B583E7A22112E92B0077A01F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,12 +303,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-covoiturageV1_2/Pods-covoiturageV1_2-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -284,12 +318,14 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -329,11 +365,16 @@
 				B5280E922112105300A0D22A /* InscriptionVC.swift in Sources */,
 				B583E79D2112E92B0077A01F /* AppDelegate.swift in Sources */,
 				B5DFEAF2211857CE0057784C /* MenuView.swift in Sources */,
+				B536C048211DC4B800808318 /* PopupContainer.swift in Sources */,
 				B5B5A99E211300EC003E0E75 /* MenuVC.swift in Sources */,
+				B536C04C211DC4C800808318 /* CellView.swift in Sources */,
 				B5280E8E2112100600A0D22A /* FirstVC.swift in Sources */,
+				B536C04E211DC4CD00808318 /* AnimationClass.swift in Sources */,
 				B5CC62EB211C3931006BC2CC /* User.swift in Sources */,
+				B536C04A211DC4C200808318 /* CalendarPopUp.swift in Sources */,
 				B5DFEAFB211886A90057784C /* AddACircuitVC.swift in Sources */,
 				B59D7DE32119E5EA009DB04F /* AuthService.swift in Sources */,
+				B536C054211DC4EA00808318 /* Extensions.swift in Sources */,
 				B5DFEAF5211882FE0057784C /* UIColorExtension.swift in Sources */,
 				B560D4242119D292000E0E46 /* DataService.swift in Sources */,
 				B5B5A99C2112FFC8003E0E75 /* CircuitListVC.swift in Sources */,

@@ -16,5 +16,7 @@ target 'covoiturageV1_2' do
   pod 'Firebase/Storage'
   pod 'FacebookCore'
   pod 'FacebookLogin'
+  pod 'JTAppleCalendar'
+  pod 'CVCalendar', '~> 1.6.1'
     
 end

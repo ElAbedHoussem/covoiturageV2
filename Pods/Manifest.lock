@@ -6,6 +6,7 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - CVCalendar (1.6.1)
   - FacebookCore (0.3.1):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.33)
@@ -54,6 +55,7 @@ PODS:
   - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - GTMSessionFetcher/Core (1.2.0)
+  - JTAppleCalendar (7.1.5)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -63,6 +65,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - CVCalendar (~> 1.6.1)
   - FacebookCore
   - FacebookLogin
   - FBSDKLoginKit
@@ -70,11 +73,13 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - JTAppleCalendar
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Bolts
+    - CVCalendar
     - FacebookCore
     - FacebookLogin
     - FBSDKCoreKit
@@ -88,12 +93,14 @@ SPEC REPOS:
     - FirebaseStorage
     - GoogleToolboxForMac
     - GTMSessionFetcher
+    - JTAppleCalendar
     - leveldb-library
     - nanopb
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  CVCalendar: 505c11b11a088b43f159806e791eba1c2540853b
   FacebookCore: 33078ef1d7d76b73f7e8c990dca7d3ea6db8d22f
   FacebookLogin: 6f15bf4fefd7a8865abbfa8fcd7f3dfd87aa275f
   FBSDKCoreKit: 1a5b2e3ceb5ca827a53c54aa5f4a3480efff80d2
@@ -107,9 +114,10 @@ SPEC CHECKSUMS:
   FirebaseStorage: 7ca4bb7b58a25fa647b04f524033fc7cb7eb272b
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
+  JTAppleCalendar: 2d4f974f9f3c8b4964d51ca1f6e004883c031fbe
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: af069119988cfc1f92d127c69f36abd02ecef502
+PODFILE CHECKSUM: d7550c0c2956c385fe00c0f002a2fff7332fd61f
 
 COCOAPODS: 1.5.3
