@@ -51,6 +51,16 @@ PODS:
   - FirebaseStorage (3.0.0):
     - FirebaseCore (~> 5.0)
     - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleMaps (2.7.0):
+    - GoogleMaps/Maps (= 2.7.0)
+  - GoogleMaps/Base (2.7.0)
+  - GoogleMaps/Maps (2.7.0):
+    - GoogleMaps/Base
+  - GooglePlacePicker (2.7.0):
+    - GoogleMaps (= 2.7.0)
+    - GooglePlaces (= 2.7.0)
+  - GooglePlaces (2.7.0):
+    - GoogleMaps/Base (= 2.7.0)
   - GoogleToolboxForMac/Defines (2.1.4)
   - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
     - GoogleToolboxForMac/Defines (= 2.1.4)
@@ -73,6 +83,9 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - GoogleMaps
+  - GooglePlacePicker
+  - GooglePlaces
   - JTAppleCalendar
 
 SPEC REPOS:
@@ -91,6 +104,9 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseInstanceID
     - FirebaseStorage
+    - GoogleMaps
+    - GooglePlacePicker
+    - GooglePlaces
     - GoogleToolboxForMac
     - GTMSessionFetcher
     - JTAppleCalendar
@@ -112,12 +128,15 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 27be5ac5bc75e0b17537b2bbfada8258addcc8cd
   FirebaseInstanceID: f3f0657372592ecdfdfe2cac604a5a75758376a6
   FirebaseStorage: 7ca4bb7b58a25fa647b04f524033fc7cb7eb272b
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  GooglePlacePicker: 59ea44db173c58486ad6123993e81feefcbce9c3
+  GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   JTAppleCalendar: 2d4f974f9f3c8b4964d51ca1f6e004883c031fbe
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: d7550c0c2956c385fe00c0f002a2fff7332fd61f
+PODFILE CHECKSUM: ae804069eb6adcb8e8c9ccc30185d6f44587a552
 
 COCOAPODS: 1.5.3

@@ -18,5 +18,9 @@ target 'covoiturageV1_2' do
   pod 'FacebookLogin'
   pod 'JTAppleCalendar'
   pod 'CVCalendar', '~> 1.6.1'
+  pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
+  pod 'GoogleMaps'
+
     
 end

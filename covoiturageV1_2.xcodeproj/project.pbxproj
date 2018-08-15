@@ -28,6 +28,10 @@
 		B583E7A52112E92B0077A01F /* covoiturageV1_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B583E7A32112E92B0077A01F /* covoiturageV1_2.xcdatamodeld */; };
 		B583E7A72112E92C0077A01F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B583E7A62112E92B0077A01F /* Assets.xcassets */; };
 		B583E7AA2112E92C0077A01F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B583E7A82112E92C0077A01F /* LaunchScreen.storyboard */; };
+		B59996772123216C00406269 /* dropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59996762123216C00406269 /* dropDownView.swift */; };
+		B59996792123218D00406269 /* dropDownBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59996782123218D00406269 /* dropDownBtn.swift */; };
+		B599967C212321ED00406269 /* dropDownProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599967B212321ED00406269 /* dropDownProtocol.swift */; };
+		B599967E21241F4700406269 /* PickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599967D21241F4700406269 /* PickerService.swift */; };
 		B59D7DE32119E5EA009DB04F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59D7DE22119E5EA009DB04F /* AuthService.swift */; };
 		B5B5A99C2112FFC8003E0E75 /* CircuitListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5A99B2112FFC8003E0E75 /* CircuitListVC.swift */; };
 		B5B5A99E211300EC003E0E75 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5A99D211300EC003E0E75 /* MenuVC.swift */; };
@@ -64,6 +68,10 @@
 		B583E7A62112E92B0077A01F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B583E7A92112E92C0077A01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B583E7AB2112E92C0077A01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B59996762123216C00406269 /* dropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownView.swift; sourceTree = "<group>"; };
+		B59996782123218D00406269 /* dropDownBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownBtn.swift; sourceTree = "<group>"; };
+		B599967B212321ED00406269 /* dropDownProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownProtocol.swift; sourceTree = "<group>"; };
+		B599967D21241F4700406269 /* PickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerService.swift; sourceTree = "<group>"; };
 		B59D7DE22119E5EA009DB04F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B5B5A99B2112FFC8003E0E75 /* CircuitListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitListVC.swift; sourceTree = "<group>"; };
 		B5B5A99D211300EC003E0E75 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
@@ -152,6 +160,7 @@
 			children = (
 				B560D4232119D292000E0E46 /* DataService.swift */,
 				B59D7DE22119E5EA009DB04F /* AuthService.swift */,
+				B599967D21241F4700406269 /* PickerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -177,6 +186,7 @@
 		B583E79B2112E92B0077A01F /* covoiturageV1_2 */ = {
 			isa = PBXGroup;
 			children = (
+				B599967A212321B900406269 /* Protocol */,
 				B5CC62E9211C3902006BC2CC /* Models */,
 				B560D4222119D281000E0E46 /* Services */,
 				B560D4202119D033000E0E46 /* GoogleService-Info.plist */,
@@ -196,6 +206,14 @@
 			path = covoiturageV1_2;
 			sourceTree = "<group>";
 		};
+		B599967A212321B900406269 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B599967B212321ED00406269 /* dropDownProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		B5CC62E9211C3902006BC2CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				B5DFEAF1211857CE0057784C /* MenuView.swift */,
+				B59996762123216C00406269 /* dropDownView.swift */,
+				B59996782123218D00406269 /* dropDownBtn.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,6 +252,7 @@
 				B583E7962112E92B0077A01F /* Frameworks */,
 				B583E7972112E92B0077A01F /* Resources */,
 				172531BB9D72337ADC5E6BE9 /* [CP] Embed Pods Frameworks */,
+				F531F6DF0C6FC2C87DD83041 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -352,6 +373,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F531F6DF0C6FC2C87DD83041 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-covoiturageV1_2/Pods-covoiturageV1_2-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-covoiturageV1_2/Pods-covoiturageV1_2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -359,8 +402,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B59996772123216C00406269 /* dropDownView.swift in Sources */,
 				B5DFEAF7211885310057784C /* SearchCircuitVC.swift in Sources */,
 				B5280E902112102D00A0D22A /* AuthVC.swift in Sources */,
+				B599967C212321ED00406269 /* dropDownProtocol.swift in Sources */,
 				B583E7A52112E92B0077A01F /* covoiturageV1_2.xcdatamodeld in Sources */,
 				B5280E922112105300A0D22A /* InscriptionVC.swift in Sources */,
 				B583E79D2112E92B0077A01F /* AppDelegate.swift in Sources */,
@@ -378,7 +423,9 @@
 				B5DFEAF5211882FE0057784C /* UIColorExtension.swift in Sources */,
 				B560D4242119D292000E0E46 /* DataService.swift in Sources */,
 				B5B5A99C2112FFC8003E0E75 /* CircuitListVC.swift in Sources */,
+				B599967E21241F4700406269 /* PickerService.swift in Sources */,
 				B5280E8B21120AD500A0D22A /* SWRevealViewController.m in Sources */,
+				B59996792123218D00406269 /* dropDownBtn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

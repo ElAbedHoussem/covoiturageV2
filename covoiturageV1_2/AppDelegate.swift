@@ -11,6 +11,9 @@ import CoreData
 import Firebase
 import  FirebaseAuth
 import FBSDKCoreKit
+import  GooglePlaces
+import  GoogleMaps
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         // Override point for customization after application launch.
@@ -33,6 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.makeKeyAndVisible()
             window?.rootViewController?.present(authVC, animated: true, completion: nil)
         }
+
+
+        GMSServices.provideAPIKey("AIzaSyDz8iyBNbDByJ5phu0-XkMx_tt5DEr_2CM")
+        GMSPlacesClient.provideAPIKey("AIzaSyDz8iyBNbDByJ5phu0-XkMx_tt5DEr_2CM")
         return true
     }
     
