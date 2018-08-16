@@ -25,20 +25,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         // Override point for customization after application launch.
-        
-        
-        
-
-        if Auth.auth().currentUser == nil {
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let authVC = storyboard.instantiateViewController(withIdentifier: "AuthVC")
-            window?.makeKeyAndVisible()
-            window?.rootViewController?.present(authVC, animated: true, completion: nil)
-        }
-
-
         GMSServices.provideAPIKey("AIzaSyDz8iyBNbDByJ5phu0-XkMx_tt5DEr_2CM")
         GMSPlacesClient.provideAPIKey("AIzaSyDz8iyBNbDByJ5phu0-XkMx_tt5DEr_2CM")
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if Auth.auth().currentUser == nil {
+            let authVC = storyboard.instantiateViewController(withIdentifier: "AuthVC") as! AuthVC
+            window?.makeKeyAndVisible()
+            window?.rootViewController?.present(authVC, animated: true, completion: nil)
+        }/*
+        else{
+            AuthService.instance.saveUserInSessionManager(Mail:  (Auth.auth().currentUser?.email)!)
+            let ListCircuitVC = storyboard.instantiateViewController(withIdentifier: "AddACircuitVC") as! AddACircuitVC
+            window?.makeKeyAndVisible()
+            window?.rootViewController?.present(ListCircuitVC, animated: true, completion: nil)
+        }*/
         return true
     }
     

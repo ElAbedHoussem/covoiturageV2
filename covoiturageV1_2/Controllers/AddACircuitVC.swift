@@ -9,7 +9,6 @@
 import UIKit
 import  JTAppleCalendar
 import CoreLocation
-import MapKit
 import  GooglePlaces
 
 struct MyPlace {
@@ -24,15 +23,18 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
     var chosenPlace: MyPlace?
 
     var pickerView = UIPickerView()
-    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var destinationTextFiled: UITextField!
     @IBOutlet weak var departTextField: UITextField!
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var hourMinuteTextField: UITextField!
+    @IBOutlet weak var prixUnitaireTextField: UITextField!
+
+    @IBOutlet weak var marqueTextField: UITextField!
+    @IBOutlet weak var modeleTextField: UITextField!
+    @IBOutlet weak var nombreDePlaceTextField: UITextField!
+    @IBOutlet weak var remarqueTextView: UITextView!
 
 
-
-    var matchingItems: [MKMapItem] = [MKMapItem]()
     var tableView = UITableView()
    // @IBOutlet weak var dateLabel: UILabel!
     var aPopupContainer: PopupContainer?
@@ -44,7 +46,13 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
     }
     var minuteArray : [String] = [String]()
     var hourArray : [String] = [String]()
+    var fullDate : String?
+    var FromLatitude : Double?
+    var FromLongitude : Double?
+    var Tolatitude : Double?
+    var toLongitude : Double?
 
+    var isBeginTextField = true
     override func viewDidLoad() {
         super.viewDidLoad()
         destinationTextFiled.delegate = self
@@ -65,33 +73,22 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     /////Autocompete using googleservice
     ///*******Begin*************//
 
 
     //MARK: textfield
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+
+        isBeginTextField = textField == departTextField ? true : false
         let autoCompleteController = GMSAutocompleteViewController()
         autoCompleteController.delegate = self
-
         let filter = GMSAutocompleteFilter()
         autoCompleteController.autocompleteFilter = filter
-
         self.locationManager.startUpdatingLocation()
         self.present(autoCompleteController, animated: true, completion: nil)
+
+
         return false
     }
 
@@ -99,9 +96,17 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         let lat = place.coordinate.latitude
         let long = place.coordinate.longitude
-
-
-        departTextField.text=place.formattedAddress
+        print("longuitude = \(long) , latitude = \(lat)")
+        if  isBeginTextField{
+            departTextField.text=place.formattedAddress
+            FromLongitude = long
+            FromLatitude = lat
+        }
+        else {
+            destinationTextFiled.text = place.formattedAddress
+            toLongitude = long
+            Tolatitude = lat
+        }
         chosenPlace = MyPlace(name: place.formattedAddress!, lat: lat, long: long)
 
         self.dismiss(animated: true, completion: nil) // dismiss after place selected
@@ -121,32 +126,8 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
         print("Error while getting location \(error)")
     }
 
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        locationManager.delegate = nil
-        locationManager.stopUpdatingLocation()
-        let location = locations.last
-        let lat = (location?.coordinate.latitude)!
-        let long = (location?.coordinate.longitude)!
-
-
-    }
 
     ///*********End*************///
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -179,13 +160,10 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
             minute = minuteArray[row]
         }
          hourMinuteTextField.text = "\(hour) : \(minute)"
+        print("hourMinute = \(hourMinuteTextField.text)")
 
     }
     ////*********End**************///
-
-
-
-
 
 
 
@@ -200,11 +178,9 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
         PopupContainer.generatePopupWithView(xibView).show()
 
     }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
     }
-
     func setDate() {
         let month = testCalendar.dateComponents([.month], from: currentDate).month!
         let weekday = testCalendar.component(.weekday, from: currentDate)
@@ -212,25 +188,25 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
         let week = DateFormatter().shortWeekdaySymbols[weekday-1]
 
         let day = testCalendar.component(.day, from: currentDate)
-
+        print("\(week), " + monthName + " " + String(day))
+        fullDate = "\(week), " + monthName + " " + String(day)
         //dateLabel.text = "\(week), " + monthName + " " + String(day)
     }
 
+    @IBAction func onDeposerWasPressed(_ sender: Any) {
+        if (departTextField.text != "") && (destinationTextFiled.text != "") && (hourMinuteTextField.text != "") && (marqueTextField.text != "") && (modeleTextField.text != "") && (nombreDePlaceTextField.text != "") && (prixUnitaireTextField.text != "" && fullDate != "") {
 
-
-
+                let annonce = Annonce(fromName: departTextField.text, fromLatitude: FromLatitude!, fromLongitude: FromLongitude!,
+                                  toName: destinationTextFiled.text!, toLatitude: Tolatitude!, toLongitude:toLongitude!,
+                                  date: fullDate!, hourMinute: hourMinuteTextField.text!,  mark: marqueTextField.text!, model: modeleTextField.text!,
+                                  numberOfplaces: nombreDePlaceTextField.text!, Uprice: prixUnitaireTextField.text!)
+                annonce.addAnoonce()
+                print ("ajout d'annonce avec succee")
+        }else{
+                print("les chamsp ne sont pas tous remplis ")
+        }
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 extension AddACircuitVC: CalendarPopUpDelegate {
@@ -240,209 +216,3 @@ extension AddACircuitVC: CalendarPopUpDelegate {
 }
 
 /////********End*********///////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-extension AddACircuitVC  {
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-
-        if textField == departTextField {
-            tableView.frame = CGRect(x: 45, y: 81, width: view.frame.width - 50, height: view.frame.height-300)
-            tableView.layer.cornerRadius = 5.0
-            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "locationCell")
-            tableView.delegate = self
-            tableView.dataSource = self
-            
-            tableView.tag = 18
-            
-            tableView.rowHeight = 60
-            view.addSubview(tableView)
-            animateTableView(shouldShow: true , isBegin :true)
-        }
-        else if textField == destinationTextFiled{
-            tableView.frame = CGRect(x: 85, y: 121, width: view.frame.width - 32, height: view.frame.height - 100)
-            tableView.layer.cornerRadius = 5.0
-            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "locationCell")
-            tableView.delegate = self
-            tableView.dataSource = self
-
-            tableView.tag = 18
-
-            tableView.rowHeight = 60
-            view.addSubview(tableView)
-            animateTableView(shouldShow: true, isBegin:  false)
-        }
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == departTextField{
-            performSearch(isBegin : true)
-            view.endEditing(true)
-        } else if textField == destinationTextFiled{
-            performSearch(isBegin: false)
-            view.endEditing(true)
-        }
-        return true
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField == departTextField{
-            if departTextField.text == "" {
-                UIView.animate(withDuration: 0.2, animations: {
-                    print("ecrire une chose dans la zone de depart")
-                })
-            }
-        }
-    }
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        return true
-    }
-    
-    
-    
-    func animateTableView(shouldShow : Bool ,  isBegin : Bool)
-    {
-        if shouldShow{
-            if isBegin{
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.tableView.frame = CGRect(x: 15, y: 111, width: self.view.frame.width - 32, height: self.view.frame.height - 100)
-                })
-            }else{
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.tableView.frame = CGRect(x: 15, y: 151, width: self.view.frame.width - 32, height: self.view.frame.height - 100)
-                })
-            }
-        }else {
-            UIView.animate(withDuration: 0.2, animations: {
-                self.tableView.frame = CGRect(x: 20, y: self.view.frame.height, width: self.view.frame.width - 40, height: self.view.frame.height - 170)
-            }, completion: { (finished) in
-                for subview in self.view.subviews {
-                    if subview.tag == 18 {
-                        subview.removeFromSuperview()
-                    }
-                }
-            })
-        }
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-extension AddACircuitVC: UITableViewDelegate, UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "locationCell")
-        let mapItem = matchingItems[indexPath.row]
-        print("le mapname est : \(mapItem.name)")
-        cell.textLabel?.text = mapItem.name
-        cell.detailTextLabel?.text = mapItem.placemark.title
-        return cell
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-                if tableView == departTextField
-                {
-                    print("Begin selected")
-                    departTextField.text = tableView.cellForRow(at: indexPath)?.textLabel?.text
-                }else if tableView == destinationTextFiled{
-                    print("Destination selected")
-                    destinationTextFiled.text = tableView.cellForRow(at: indexPath)?.textLabel?.text
-                }
-                let selectedMapItem = matchingItems[indexPath.row]
-                animateTableView(shouldShow: false , isBegin: true)
-        }
-   func numberOfSections(in tableView: UITableView) -> Int {
-        return matchingItems.count
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-extension AddACircuitVC: MKMapViewDelegate{
-
-    func performSearch(isBegin :Bool){
-        matchingItems.removeAll()
-        let request = MKLocalSearchRequest()
-        if isBegin {
-            request.naturalLanguageQuery = departTextField.text
-            print(departTextField.text)
-        }else{
-            request.naturalLanguageQuery = destinationTextFiled.text
-            print(destinationTextFiled.text)
-        }
-        request.region = mapView.region
-        print("region = \(mapView.region)")
-        let search = MKLocalSearch(request: request)
-        search.start { (response, error) in
-            if error != nil{
-                print("il y a une erreuur")
-                print(error.debugDescription)
-            }else if response!.mapItems.count == 0{
-                print("no results")
-            }else{
-                for mapItem in response!.mapItems{
-                    self.matchingItems.append(mapItem as MKMapItem)
-                    self.tableView.reloadData()
-                }
-            }
-        }
-
-    }
-}
-
-
-
-
-
-
-
-
-
-
-

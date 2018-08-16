@@ -16,105 +16,94 @@ class  AuthService {
     
     static let instance  = AuthService()
 
-
-
-
-
-    // th registerUser method is called to save th user informations in firebase
-    func registerUser(withEmail email: String , andPassword password: String,firstName :String, lastName : String , phoneNumber : Double ,age : Int , picture :UIImageView, userCreationComplete: @escaping(_ status: Bool, _ error: Error?) ->()){
-        //this method is from FirebaseAuth library , she save the user as a firebase user
+    func registerUser(withEmail email: String , andPassword password: String,firstName :String, lastName : String , phoneNumber : String ,age : String , picture :UIImageView, userCreationComplete: @escaping(_ status: Bool, _ error: Error?) ->()){
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             guard let user = user else{
                 userCreationComplete(false,error)
                 return
         }
-            //create an Data object to save the image
             var image = Data()
-            //convert  the UIImage to PNG
             image = UIImagePNGRepresentation(picture.image!)!
-            //the createUser method save data in Firebase/Database
             DataService.instance.createUser(email: email, password: password, firstName: firstName, lastName: lastName, phoneNumber: phoneNumber,age : age, picture: image)
             userCreationComplete(true, nil)
-
-
-            
-            
         }
     }
-    
-    //loginUser method asure the Auth for a specific email an password in Firebase
+
     func loginUser(withEmail email: String , andPassword password: String, loginComplete: @escaping(_ status: Bool, _ error: Error?) ->()){
-        // Auth.auth.signIn help us to asure th Auth
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if error != nil{
                     loginComplete(false,error)
                 return
+            }else{
+                print("connexion avec succes")
+                self.saveUserInSessionManager(Mail: email, Password: password)
+                loginComplete(true,nil)
             }
-            print("connexion avec succes")
-            //getUser method retrive all information of an specific mail an save in the user.Default
-            self.getUser(Mail: email, Password: password)
-            loginComplete(true,nil)
         }
     }
 
-
-
-    //getUser search all the information about an specific mail  , retrive them and save in user.Default
-    func  getUser(Mail : String , Password : String) -> () {
-        //retriving data from document user
-        let ref = Database.database().reference(withPath: "users")
-        ref.observeSingleEvent(of: .value, with: { snapshot in
+    func  saveUserInSessionManager(Mail : String , Password : String) -> () {
+        let ref_db = Database.database().reference(withPath: "users")
+        let ref_storage = Storage.storage()
+        ref_db.observeSingleEvent(of: .value, with: { snapshot in
             if !snapshot.exists() { return }
-            //print(snapshot.value!)
-
-
-            //casting snapshot ot a dictionary
             let Usersdictionnary = snapshot.value as? [String: AnyObject]
-            //print("le contenu de dictionnaire est :")
-            //print(Usersdictionnary)
-
-            print("***********")
-            for (var Userkey, var UserInfo) in Usersdictionnary! {
-                print(Userkey)
-                var UserDetails  = UserInfo as?[String : AnyObject]
-                //if we are in the  right user
-                if ((UserDetails!["email"] as? String) == Mail && (UserDetails!["password"]as? String) == Password){
-
-
-                    //save user infromation in user.Default
-                    //****Begin ******//
-                    let arrayOfUsers = UserDefaults.standard.object(forKey: "currentUser")
-                    if var array = arrayOfUsers as? [[String:String]]{
-                        let user = ["userID" : UserDetails!["userID"],"email" : UserDetails!["email"], "firstName" : UserDetails!["firstName"],
-                                    "lastName" : UserDetails!["lastName"], "password" :UserDetails!["password"] ,"phoneNumber" : UserDetails!["phoneNumber"] , "age" : UserDetails!["age"]
-                        ];
-                        array.append(user as! [String : String])
-                        UserDefaults.standard.set(array, forKey:"currentUser")
-                    }
-                    else{
-                        var array:[[String:String]] = [[:]]
-                        let user = ["userID" : UserDetails!["userID"],"email" : UserDetails!["email"], "firstName" : UserDetails!["firstName"],
-                                    "lastName" : UserDetails!["lastName"], "password" :UserDetails!["password"] ,"phoneNumber" : UserDetails!["phoneNumber"], "age" : UserDetails!["age"]
-                        ];
-                        array.append(user as! [String : String])
-                        UserDefaults.standard.set(array, forKey:"currentUser")
-                    }
-                    print("insertion in user.Default with succes")
-                    //*****End***//
-
-                    /*
-                    for (key, value) in UserDetails! {
-                        print("\(key)  ---> \(value)")
-                    }*/
+            for (Userkey, UserInfo) in Usersdictionnary! {
+                if ((UserInfo["email"] as! String) == Mail && (UserInfo["password"] as! String) == Password ){
+                    SessionManager.session.email = UserInfo["email"] as! String
+                    SessionManager.session.userID = UserInfo["userID"] as! String
+                    SessionManager.session.password = UserInfo["password"] as! String
+                    SessionManager.session.age = UserInfo["age"] as! String
+                    SessionManager.session.userID = UserInfo["userID"] as! String
+                    SessionManager.session.lastName = UserInfo["lastName"] as! String
+                    SessionManager.session.firstNsame = UserInfo["firstName"] as! String
+                    SessionManager.session.phoneNumber = UserInfo["phoneNumber"]  as! String
+                    ref_storage.reference().child("images/\(UserInfo["userID"])").getData(maxSize: 1000*1000, completion: { (data, error) in
+                        if error == nil{
+                                SessionManager.session.picture = data
+                            print("succes retriving picture")
+                        }else{
+                            print("retrinving picture error :")
+                            print("******")
+                            print("\(error)")
+                        }
+                    })
+                    print("insertion in SessionManager with succes from appDelegate")
                 }
-
-
-
-
-
-
-
             }
         })
     }
+
+    func  saveUserInSessionManager(Mail : String ) {
+        let ref = Database.database().reference(withPath: "users")
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            if !snapshot.exists() { return }
+            let Usersdictionnary = snapshot.value as? [String: AnyObject]
+            for (Userkey, UserInfo) in Usersdictionnary! {
+                if ((UserInfo["email"] as! String) == Mail){
+                    SessionManager.session.email = UserInfo["email"] as! String
+                    SessionManager.session.password = UserInfo["password"] as! String
+                    SessionManager.session.age = (UserInfo["age"] as! NSNumber).stringValue
+                    SessionManager.session.userID = UserInfo["userID"] as! String
+                    SessionManager.session.lastName = UserInfo["lastName"] as! String
+                    SessionManager.session.firstNsame = UserInfo["firstName"] as! String
+                    SessionManager.session.phoneNumber = (UserInfo["phoneNumber"]  as! NSNumber).stringValue
+                    SessionManager.session.picture = UserInfo["picture"] as! Data
+                    print("insertion in SessionManager with succes from appDelegate")
+                }
+            }
+        })
+    }
+
+
+    func getUserFromSessionManager() -> [String:Any] {
+        return ["userID" : SessionManager.session.userID!  ,"firstName" : SessionManager.session.firstNsame! , "lastName" : SessionManager.session.lastName! ,
+                "age" : SessionManager.session.age! ,"phoneNumber" : SessionManager.session.phoneNumber! , "email" : SessionManager.session.email! ,
+                "password" : SessionManager.session.password! , "picture" : SessionManager.session.picture]
+    }
+
+
+
+
+
 }

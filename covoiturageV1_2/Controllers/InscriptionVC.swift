@@ -33,7 +33,7 @@ class InscriptionVC: UIViewController , UIImagePickerControllerDelegate , UINavi
     @IBAction func onEnregistrerBtnPressed(_ sender: UIButton) {
         if ( nameTextField.text != nil && lastNameTextField.text != nil && passwordTextField.text != nil && mailTextField.text != nil && telNumberTextField.text != nil) {
             // send data to registerUser to save it
-            AuthService.instance.registerUser(withEmail: mailTextField.text!, andPassword: passwordTextField.text!, firstName: nameTextField.text!, lastName: lastNameTextField.text! , phoneNumber: Double(telNumberTextField.text!)!,age: Int((ageTextField?.text!)!)! , picture: profilImage!, userCreationComplete: { (succes, registrationError) in
+            AuthService.instance.registerUser(withEmail: mailTextField.text!, andPassword: passwordTextField.text!, firstName: nameTextField.text!, lastName: lastNameTextField.text! , phoneNumber: telNumberTextField.text!,age: (ageTextField?.text)! , picture: profilImage!, userCreationComplete: { (succes, registrationError) in
                 if succes{
                     ///if the infromations was saved with succes , then we send the user the Auth View Controller
 
@@ -66,7 +66,7 @@ class InscriptionVC: UIViewController , UIImagePickerControllerDelegate , UINavi
             self.present(imagePicker, animated: true, completion: nil)
         }
 
-        //we can take a phot with camera also
+        //we can take a photo with camera also
         // but this need a real phone to simulate it , that's why we will not ue this method for the moment
         /*
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
