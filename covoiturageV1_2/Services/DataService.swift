@@ -31,10 +31,19 @@ class DataService {
 
     func createUser(email: String , password: String,firstName :String, lastName : String , phoneNumber : String, age : String, picture : Data){
         let userID = REF_USERS.childByAutoId().key
-
-        print(DB_STORAGE.child("images/\(userID)").putData(picture))
-        var userData = ["userID": userID , "email" : email , "password" : password,"firstName" : firstName , "lastName" : lastName ,"phoneNumber" : phoneNumber,"age" : age] as [String : Any]
-        REF_USERS.child(userID).setValue(userData)
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpeg"
+        DB_STORAGE.child("images").child(userID).putData(picture, metadata: metaData){(metaData,error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }else{
+                print("saving picture with succes")
+            }
+                //print(DB_STORAGE.child("images/\(userID)").putData(picture))
+                var userData = ["userID": userID , "email" : email , "password" : password,"firstName" : firstName , "lastName" : lastName ,"phoneNumber" : phoneNumber,"age" : age] as [String : Any]
+                self.REF_USERS.child(userID).setValue(userData)
+            }
     }
 
     func createAdvert(AdvertInfos : [String : Any]){
@@ -46,9 +55,4 @@ class DataService {
     }
 
 
-
-
-
-
-    
 }

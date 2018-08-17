@@ -58,17 +58,18 @@ class  AuthService {
                     SessionManager.session.lastName = UserInfo["lastName"] as! String
                     SessionManager.session.firstNsame = UserInfo["firstName"] as! String
                     SessionManager.session.phoneNumber = UserInfo["phoneNumber"]  as! String
-                    ref_storage.reference().child("images/\(UserInfo["userID"])").getData(maxSize: 1000*1000, completion: { (data, error) in
+                    var pathDirectory = "images/"
+                    if let filePath = SessionManager.session.userID {
+                        ref_storage.reference().child(pathDirectory+filePath).getData(maxSize: 10*1024*2048, completion: { (data, error) in
                         if error == nil{
-                                SessionManager.session.picture = data
-                            print("succes retriving picture")
+                            SessionManager.session.picture = data
+                            print("imagepath = \(pathDirectory+filePath)")
                         }else{
-                            print("retrinving picture error :")
-                            print("******")
-                            print("\(error)")
+                            print(error)
                         }
                     })
-                    print("insertion in SessionManager with succes from appDelegate")
+                    }
+                    break
                 }
             }
         })

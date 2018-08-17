@@ -44,6 +44,8 @@ class AuthVC: UIViewController  {
     
 
 
+    /*
+
     //not used for the moment
 
     @objc func handleSignInWithFacebookButtonTapped() {
@@ -76,7 +78,7 @@ class AuthVC: UIViewController  {
         }
     }
     
-    
+    */
     
 
     

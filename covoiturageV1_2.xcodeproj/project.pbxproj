@@ -34,6 +34,7 @@
 		B599967E21241F4700406269 /* PickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599967D21241F4700406269 /* PickerService.swift */; };
 		B59996BF212461CD00406269 /* Annonce.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59996BE212461CD00406269 /* Annonce.swift */; };
 		B59996C12124ECCC00406269 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59996C02124ECCC00406269 /* SessionManager.swift */; };
+		B59996C52126DA7D00406269 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59996C42126DA7C00406269 /* testViewController.swift */; };
 		B59D7DE32119E5EA009DB04F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59D7DE22119E5EA009DB04F /* AuthService.swift */; };
 		B5B5A99C2112FFC8003E0E75 /* CircuitListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5A99B2112FFC8003E0E75 /* CircuitListVC.swift */; };
 		B5B5A99E211300EC003E0E75 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5A99D211300EC003E0E75 /* MenuVC.swift */; };
@@ -75,6 +76,7 @@
 		B599967D21241F4700406269 /* PickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerService.swift; sourceTree = "<group>"; };
 		B59996BE212461CD00406269 /* Annonce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annonce.swift; sourceTree = "<group>"; };
 		B59996C02124ECCC00406269 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		B59996C42126DA7C00406269 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		B59D7DE22119E5EA009DB04F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B5B5A99B2112FFC8003E0E75 /* CircuitListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitListVC.swift; sourceTree = "<group>"; };
 		B5B5A99D211300EC003E0E75 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				B5B5A99D211300EC003E0E75 /* MenuVC.swift */,
 				B5DFEAF6211885310057784C /* SearchCircuitVC.swift */,
 				B5DFEAFA211886A90057784C /* AddACircuitVC.swift */,
+				B59996C42126DA7C00406269 /* testViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				B5DFEAF2211857CE0057784C /* MenuView.swift in Sources */,
 				B536C048211DC4B800808318 /* PopupContainer.swift in Sources */,
 				B5B5A99E211300EC003E0E75 /* MenuVC.swift in Sources */,
+				B59996C52126DA7D00406269 /* testViewController.swift in Sources */,
 				B536C04C211DC4C800808318 /* CellView.swift in Sources */,
 				B5280E8E2112100600A0D22A /* FirstVC.swift in Sources */,
 				B536C04E211DC4CD00808318 /* AnimationClass.swift in Sources */,

@@ -25,18 +25,22 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
     var pickerView = UIPickerView()
     @IBOutlet weak var destinationTextFiled: UITextField!
     @IBOutlet weak var departTextField: UITextField!
+
     @IBOutlet weak var menuBtn: UIButton!
+
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var hourMinuteTextField: UITextField!
+
+    @IBOutlet weak var nombreDePlaceTextField: UITextField!
     @IBOutlet weak var prixUnitaireTextField: UITextField!
 
     @IBOutlet weak var marqueTextField: UITextField!
     @IBOutlet weak var modeleTextField: UITextField!
-    @IBOutlet weak var nombreDePlaceTextField: UITextField!
+    
     @IBOutlet weak var remarqueTextView: UITextView!
 
 
     var tableView = UITableView()
-   // @IBOutlet weak var dateLabel: UILabel!
     var aPopupContainer: PopupContainer?
     var testCalendar = Calendar(identifier: .gregorian)
     var currentDate: Date! = Date() {
@@ -72,14 +76,10 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
         */
     }
 
-
     /////Autocompete using googleservice
     ///*******Begin*************//
-
-
     //MARK: textfield
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-
         isBeginTextField = textField == departTextField ? true : false
         let autoCompleteController = GMSAutocompleteViewController()
         autoCompleteController.delegate = self
@@ -87,11 +87,8 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
         autoCompleteController.autocompleteFilter = filter
         self.locationManager.startUpdatingLocation()
         self.present(autoCompleteController, animated: true, completion: nil)
-
-
         return false
     }
-
     // MARK: GOOGLE AUTO COMPLETE DELEGATE
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         let lat = place.coordinate.latitude
@@ -108,7 +105,6 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
             Tolatitude = lat
         }
         chosenPlace = MyPlace(name: place.formattedAddress!, lat: lat, long: long)
-
         self.dismiss(animated: true, completion: nil) // dismiss after place selected
     }
 
@@ -119,14 +115,10 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         self.dismiss(animated: true, completion: nil)
     }
-
     // MARK: CLLocation Manager Delegate
-
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error while getting location \(error)")
     }
-
-
     ///*********End*************///
 
 
@@ -138,12 +130,14 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
     }
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == 0{
             return hourArray.count
         }
         return minuteArray.count
     }
+
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 0 {
             return hourArray[row]
@@ -190,16 +184,17 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
         let day = testCalendar.component(.day, from: currentDate)
         print("\(week), " + monthName + " " + String(day))
         fullDate = "\(week), " + monthName + " " + String(day)
-        //dateLabel.text = "\(week), " + monthName + " " + String(day)
+        
+
+        dateLabel.text = "\(week), " + monthName + " " + String(day)
     }
 
     @IBAction func onDeposerWasPressed(_ sender: Any) {
         if (departTextField.text != "") && (destinationTextFiled.text != "") && (hourMinuteTextField.text != "") && (marqueTextField.text != "") && (modeleTextField.text != "") && (nombreDePlaceTextField.text != "") && (prixUnitaireTextField.text != "" && fullDate != "") {
-
                 let annonce = Annonce(fromName: departTextField.text, fromLatitude: FromLatitude!, fromLongitude: FromLongitude!,
                                   toName: destinationTextFiled.text!, toLatitude: Tolatitude!, toLongitude:toLongitude!,
                                   date: fullDate!, hourMinute: hourMinuteTextField.text!,  mark: marqueTextField.text!, model: modeleTextField.text!,
-                                  numberOfplaces: nombreDePlaceTextField.text!, Uprice: prixUnitaireTextField.text!)
+                                  numberOfplaces: nombreDePlaceTextField.text!, Uprice: prixUnitaireTextField.text! , ps: remarqueTextView.text)
                 annonce.addAnoonce()
                 print ("ajout d'annonce avec succee")
         }else{
@@ -208,11 +203,9 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
     }
 }
 
-
 extension AddACircuitVC: CalendarPopUpDelegate {
     func dateChaged(date: Date) {
         currentDate = date
     }
 }
-
 /////********End*********///////
