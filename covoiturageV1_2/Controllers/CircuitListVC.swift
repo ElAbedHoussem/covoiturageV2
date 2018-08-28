@@ -22,7 +22,8 @@ class CircuitListVC: UIViewController , UITableViewDelegate, UITableViewDataSour
 
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 253
+        return 96
+
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,24 +37,28 @@ class CircuitListVC: UIViewController , UITableViewDelegate, UITableViewDataSour
             cell.hourLbl.text = annoces[indexPath.row].hourMinute
             cell.toLbl.text = annoces[indexPath.row].toName
             cell.numberPlacesLbl.text = annoces[indexPath.row].numberOfplaces
-        if let nbrp : Int = Int(annoces[indexPath.row].numberOfplaces!) as? Int{
-                if nbrp > 2 {
-                    cell.numberPlacesLbl.textColor = UIColor.green
-                }
-                else{
-                    if  nbrp > 0 && nbrp <= 2 {
-                        cell.numberPlacesLbl.textColor  = UIColor.red
-                    }else{
-                        cell.numberPlacesLbl.text = " y a plus de place"
-                        cell.numberPlacesLbl.textColor  = UIColor.red
-                    }
-                }
+//        if let nbrp : Int = Int(annoces[indexPath.row].numberOfplaces!) as? Int{
+//                if nbrp > 2 {
+//                    cell.numberPlacesLbl.textColor = UIColor.green
+//                }
+//                else{
+//                    if  nbrp > 0 && nbrp <= 2 {
+//                        cell.numberPlacesLbl.textColor  = UIColor.red
+//                    }else{
+//                        cell.numberPlacesLbl.text = " y a plus de place"
+//                        cell.numberPlacesLbl.textColor  = UIColor.red
+//                    }
+//                }
+//            }
+            if let price  : String = annoces[indexPath.row].Uprice{
+                cell.priceLbl.text = "\(price) dt"
             }
-            cell.priceLbl.text = annoces[indexPath.row].Uprice
             cell.dateLbl.text = annoces[indexPath.row].date
             cell.userImg.image = annoces [indexPath.row].userPicture?.image
             cell.userImg.roundedImage()
-            cell.cellView.roundedViewCell()
+        cell.cellView.roundedViewCell(cornerRadius: (Double(cell.cellView.frame.size.height / 2)))
+            cell.priceViewCell.roundedPricePersonViewCell()
+            cell.nPlacesViewCell.roundedPricePersonViewCell()
             return cell
     }
 

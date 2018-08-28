@@ -8,10 +8,20 @@
 
 import Foundation
 extension UIView {
-    func roundedViewCell(){
-        self.layer.cornerRadius = 20
+//    func roundedViewCell(){
+//
+//        self.layer.cornerRadius = 20
+//        self.clipsToBounds = true
+//    }
+    func roundedPricePersonViewCell(){
+        self.layer.cornerRadius = self.frame.size.width / 2
         self.clipsToBounds = true
-        //self.layer.borderColor = UIColor.gray.cgColor
-        //self.layer.borderWidth = 0.5
+    }
+    func roundedViewCell(cornerRadius: Double) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.bottomRight, .topRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.bounds
+        maskLayer.path = path.cgPath
+        self.layer.mask = maskLayer
     }
 }

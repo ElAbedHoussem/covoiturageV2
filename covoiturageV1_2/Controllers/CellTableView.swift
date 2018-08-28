@@ -10,6 +10,8 @@ import UIKit
 
 class CellTableView: UITableViewCell {
 
+    @IBOutlet weak var nPlacesViewCell: UIView!
+    @IBOutlet weak var priceViewCell: UIView!
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var userImg: UIImageView!
     @IBOutlet weak var dateLbl: UILabel!
