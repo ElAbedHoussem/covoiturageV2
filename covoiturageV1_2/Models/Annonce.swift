@@ -9,28 +9,26 @@
 import Foundation
 
 class Annonce{
-
     var fromName : String?
     var fromLatitude : Double?
     var fromLongitude : Double?
     var toName : String?
     var toLatitude : Double?
     var toLongitude : Double?
-
     var date : String?
     var hourMinute : String?
-
     var mark : String?
     var model : String?
     var numberOfplaces : String?
     var Uprice : String?
-
     var ps : String?
-
     var driverInfo : [String : Any]?
+    var userPicture : UIImageView?
+    var driverID : String?
 
+    init(){}
 
-
+    // ce constructeur est applé lorsque on crée une nouvelle annonce
     init(fromName :String!, fromLatitude : Double ,fromLongitude : Double, toName : String, toLatitude : Double , toLongitude : Double, date : String, hourMinute : String , mark : String , model : String , numberOfplaces : String , Uprice : String , ps : String) {
         self.fromName = fromName
         self.fromLatitude = fromLatitude
@@ -50,24 +48,68 @@ class Annonce{
 
         self.ps = ps
 
+        //self.driverID = AuthService.instance.getIDDriverFromSessionManager()
         self.driverInfo = AuthService.instance.getUserFromSessionManager()
     }
 
+    init(fromName :String!, fromLatitude : Double ,fromLongitude : Double, toName : String, toLatitude : Double , toLongitude : Double, date : String, hourMinute : String , mark : String , model : String , numberOfplaces : String , Uprice : String , ps : String , userID : String ) {
+        self.fromName = fromName
+        self.fromLatitude = fromLatitude
+        self.fromLongitude = fromLongitude
+
+        self.toName = toName
+        self.toLatitude = toLatitude
+        self.toLongitude = toLongitude
+
+        self.date = date
+        self.hourMinute = hourMinute
+
+        self.mark = mark
+        self.model = model
+        self.numberOfplaces = numberOfplaces
+        self.Uprice = Uprice
+
+        self.ps = ps
+        self.driverID = userID
+    }
+
+    // ce constructeur est appelé seuelemtn lorsque on veut recuperer tous les annonces "getAllAdverts()"
+    init(fromName :String!, fromLatitude : Double ,fromLongitude : Double, toName : String, toLatitude : Double , toLongitude : Double, date : String, hourMinute : String , mark : String , model : String , numberOfplaces : String , Uprice : String , ps : String , userInfo : [String : Any] ) {
+        self.fromName = fromName
+        self.fromLatitude = fromLatitude
+        self.fromLongitude = fromLongitude
+
+        self.toName = toName
+        self.toLatitude = toLatitude
+        self.toLongitude = toLongitude
+
+        self.date = date
+        self.hourMinute = hourMinute
+
+        self.mark = mark
+        self.model = model
+        self.numberOfplaces = numberOfplaces
+        self.Uprice = Uprice
+
+        self.ps = ps
+        self.driverInfo = userInfo
+        var userID = ""
+        for (key , val ) in (userInfo as? [String : Any])!{
+            if key == "userID"{
+                self.driverID = val as! String
+            }
+        }
+    }
     func getInfoAnnonce() ->[String : Any] {
         return (["fromName" : self.fromName ,"fromLatitude" : self.fromLatitude , "fromLongitude" : self.fromLongitude,
                  "toName" : self.toName ,"toLatitude" : self.toLatitude , "toLongitude" : self.toLongitude , "date" : self.date ,
                  "hourMinute" : self.hourMinute , "mark" : self.mark , "model" : self.model , "numberOfplaces" : self.numberOfplaces ,
-                 "Uprice" : self.Uprice , "ps" : self.ps ,  "userInformation" : driverInfo
-            ] as? [String : Any])!
+                 "Uprice" : self.Uprice , "ps" : self.ps,  "userInformation" : driverInfo] as? [String : Any])!
+        /*,  "userInformation" : driverInfo] as? [String : Any]*/
     }
 
     func addAnoonce(){
         DataService.instance.createAdvert(AdvertInfos: self.getInfoAnnonce())
     }
-
-
-
-
-
 
 }

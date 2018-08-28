@@ -17,7 +17,7 @@ class SessionManager : NSObject{
     var phoneNumber : String?
     var email: String?
     var password : String?
-    var picture : Data?
+    //var picture : Data?
 
 }
 

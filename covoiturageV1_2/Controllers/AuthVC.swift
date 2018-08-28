@@ -21,6 +21,8 @@ class AuthVC: UIViewController  {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        emailTextField.text = "houssem@gmail.com"
+        passwordTextField.text = "houssem"
     }
     //in the Auth View controller when we press on the connexion  button , if all Field text are not empty, then we can call loginUser method
     // if the user existe and we have the good mail and password then we send him th CircuitList View Controller ( SWRevalViewController
@@ -28,9 +30,8 @@ class AuthVC: UIViewController  {
         if (emailTextField.text != nil && passwordTextField.text != nil) {
             AuthService.instance.loginUser(withEmail: emailTextField.text!, andPassword: passwordTextField.text!, loginComplete: { (succes, loginError) in
                 if succes{
-
                     let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-                    let swRevealViewController = mainStoryBoard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+                    let swRevealViewController = mainStoryBoard.instantiateViewController(withIdentifier: "CircuitListVC") as! CircuitListVC
                     self.navigationController?.pushViewController(swRevealViewController, animated: true)
 
                 }

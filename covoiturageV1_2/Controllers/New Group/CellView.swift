@@ -9,9 +9,9 @@
 import JTAppleCalendar
 
 private let preDateSelectable: Bool = true
-private let todayColor: UIColor = UIColor.black
-private let selectableDateColor: UIColor = .white
-private let selectedRoundColor: UIColor = UIColor(hex: 0xA9620C)
+private let todayColor: UIColor = UIColor.white
+private let selectableDateColor: UIColor = .black
+private let selectedRoundColor: UIColor = UIColor(hex: 0x35FFFF)
 
 class CellView: JTAppleCell {
     

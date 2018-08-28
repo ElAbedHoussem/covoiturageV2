@@ -11,16 +11,16 @@ import  JTAppleCalendar
 import CoreLocation
 import  GooglePlaces
 
-struct MyPlace {
+struct MyPlacee {
     var name: String
     var lat: Double
     var long: Double
 }
-class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSource ,CLLocationManagerDelegate, GMSAutocompleteViewControllerDelegate, UITextFieldDelegate{
+class AddACircuitVCTest{/*: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSource ,CLLocationManagerDelegate, GMSAutocompleteViewControllerDelegate, UITextFieldDelegate{
 
 
     var locationManager = CLLocationManager()
-    var chosenPlace: MyPlace?
+    var chosenPlace: MyPlacee?
 
     var pickerView = UIPickerView()
     @IBOutlet weak var destinationTextFiled: UITextField!
@@ -36,7 +36,7 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
 
     @IBOutlet weak var marqueTextField: UITextField!
     @IBOutlet weak var modeleTextField: UITextField!
-    
+
     @IBOutlet weak var remarqueTextView: UITextView!
 
 
@@ -70,11 +70,11 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
         minuteArray = PickerService.instance.fillListminute()
         hourArray = PickerService.instance.fillListHour()
         /*
-        menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
+         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
 
-        */
+         */
     }
 
     /////Autocompete using googleservice
@@ -94,7 +94,7 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         let lat = place.coordinate.latitude
         let long = place.coordinate.longitude
-       // print("longuitude = \(long) , latitude = \(lat)")
+        // print("longuitude = \(long) , latitude = \(lat)")
         if  isBeginTextField{
             departTextField.text=place.formattedAddress
             FromLongitude = long
@@ -105,7 +105,7 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
             toLongitude = long
             Tolatitude = lat
         }
-        chosenPlace = MyPlace(name: place.formattedAddress!, lat: lat, long: long)
+        chosenPlace = MyPlacee(name: place.formattedAddress!, lat: lat, long: long)
         self.dismiss(animated: true, completion: nil) // dismiss after place selected
     }
 
@@ -150,13 +150,13 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
         }else{
             minute = minuteArray[row]
         }
-         hourMinuteTextField.text = "\(hour) : \(minute)"
+        hourMinuteTextField.text = "\(hour) : \(minute)"
         //print("hourMinute = \(hourMinuteTextField.text)")
 
     }
     ////*********End**************///
 
-        //calendar Confiruration
+    //calendar Confiruration
     ////*******Begin**********/
     @IBAction func showCalendar(_ sender: UIButton) {
         let xibView = Bundle.main.loadNibNamed("CalendarPopUp", owner: nil, options: nil)?[0] as! CalendarPopUp
@@ -177,32 +177,35 @@ class AddACircuitVC: UIViewController ,UIPickerViewDelegate , UIPickerViewDataSo
 
         let day = testCalendar.component(.day, from: currentDate)
         fullDate = "\(week), " + monthName + " " + String(day)
-        
+
 
         dateLabel.text = "\(week), " + monthName + " " + String(day)
     }
 
     @IBAction func onDeposerWasPressed(_ sender: Any) {
         if (departTextField.text != "") && (destinationTextFiled.text != "") && (hourMinuteTextField.text != "") && (marqueTextField.text != "") && (modeleTextField.text != "") && (nombreDePlaceTextField.text != "") && (prixUnitaireTextField.text != "" && fullDate != "") {
-                let annonce = Annonce(fromName: departTextField.text, fromLatitude: FromLatitude!, fromLongitude: FromLongitude!,
+            let annonce = Annonce(fromName: departTextField.text, fromLatitude: FromLatitude!, fromLongitude: FromLongitude!,
                                   toName: destinationTextFiled.text!, toLatitude: Tolatitude!, toLongitude:toLongitude!,
                                   date: fullDate!, hourMinute: hourMinuteTextField.text!,  mark: marqueTextField.text!, model: modeleTextField.text!,
                                   numberOfplaces: nombreDePlaceTextField.text!, Uprice: prixUnitaireTextField.text! , ps: "testPS")
-                annonce.addAnoonce()
-                print ("ajout d'annonce avec succee")
-                let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-                let listCircuit = mainStoryBoard.instantiateViewController(withIdentifier: "CircuitListVC") as! CircuitListVC
-                self.navigationController?.pushViewController(listCircuit, animated: true)
+            annonce.addAnoonce()
+            print ("ajout d'annonce avec succee")
+            let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+            let listCircuit = mainStoryBoard.instantiateViewController(withIdentifier: "CircuitListVC") as! CircuitListVC
+            self.navigationController?.pushViewController(listCircuit, animated: true)
 
         }else{
-                print("les chamsp ne sont pas tous remplis ")
+            print("les chamsp ne sont pas tous remplis ")
         }
     }
+
 }
 
-extension AddACircuitVC: CalendarPopUpDelegate {
+extension AddACircuitVCTest: CalendarPopUpDelegate {
     func dateChaged(date: Date) {
         currentDate = date
     }
 }
 /////********End*********///////
+*/
+}

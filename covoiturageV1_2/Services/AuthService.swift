@@ -59,16 +59,18 @@ class  AuthService {
                     SessionManager.session.firstNsame = UserInfo["firstName"] as! String
                     SessionManager.session.phoneNumber = UserInfo["phoneNumber"]  as! String
                     var pathDirectory = "images/"
+                    /*
                     if let filePath = SessionManager.session.userID {
                         ref_storage.reference().child(pathDirectory+filePath).getData(maxSize: 10*1024*2048, completion: { (data, error) in
                         if error == nil{
                             SessionManager.session.picture = data
-                            print("imagepath = \(pathDirectory+filePath)")
+                            print("dans AuthService , saveUserInSessionManager , imagepath = \(pathDirectory+filePath)")
                         }else{
                             print(error)
                         }
                     })
                     }
+                    */
                     break
                 }
             }
@@ -82,25 +84,25 @@ class  AuthService {
             let Usersdictionnary = snapshot.value as? [String: AnyObject]
             for (Userkey, UserInfo) in Usersdictionnary! {
                 if ((UserInfo["email"] as! String) == Mail){
-                    SessionManager.session.email = UserInfo["email"] as! String
-                    SessionManager.session.password = UserInfo["password"] as! String
-                    SessionManager.session.age = (UserInfo["age"] as! NSNumber).stringValue
-                    SessionManager.session.userID = UserInfo["userID"] as! String
-                    SessionManager.session.lastName = UserInfo["lastName"] as! String
-                    SessionManager.session.firstNsame = UserInfo["firstName"] as! String
-                    SessionManager.session.phoneNumber = (UserInfo["phoneNumber"]  as! NSNumber).stringValue
-                    SessionManager.session.picture = UserInfo["picture"] as! Data
-                    print("insertion in SessionManager with succes from appDelegate")
+
                 }
             }
         })
     }
 
+    func getUserFromSessionManager() -> [String:Any?] {
 
-    func getUserFromSessionManager() -> [String:Any] {
-        return ["userID" : SessionManager.session.userID!  ,"firstName" : SessionManager.session.firstNsame! , "lastName" : SessionManager.session.lastName! ,
-                "age" : SessionManager.session.age! ,"phoneNumber" : SessionManager.session.phoneNumber! , "email" : SessionManager.session.email! ,
-                "password" : SessionManager.session.password! , "picture" : SessionManager.session.picture]
+        return ["userID" : SessionManager.session.userID ?? ""  ,"firstName" : SessionManager.session.firstNsame ?? "" , "lastName" : SessionManager.session.lastName ?? "" ,
+                "age" : SessionManager.session.age ?? "" ,"phoneNumber" : SessionManager.session.phoneNumber ?? "" , "email" : SessionManager.session.email ?? "" ,
+                "password" : SessionManager.session.password ?? "" ]
+    }
+
+    func getIDDriverFromSessionManager() -> String{
+        return SessionManager.session.userID ?? ""
+    }
+
+    func getUserFromSessionManager() -> String{
+        return SessionManager.session.userID ?? ""
     }
 
 

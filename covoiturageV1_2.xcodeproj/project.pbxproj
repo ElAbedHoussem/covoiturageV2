@@ -23,11 +23,15 @@
 		B560D41F2118A9EB000E0E46 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B560D41D2118A9EA000E0E46 /* FBSDKLoginKit.framework */; };
 		B560D4212119D033000E0E46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B560D4202119D033000E0E46 /* GoogleService-Info.plist */; };
 		B560D4242119D292000E0E46 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B560D4232119D292000E0E46 /* DataService.swift */; };
+		B56D49FA213329E500639A27 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D49F9213329E500639A27 /* UIImageViewExtension.swift */; };
 		B583E79D2112E92B0077A01F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B583E79C2112E92B0077A01F /* AppDelegate.swift */; };
 		B583E7A22112E92B0077A01F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B583E7A02112E92B0077A01F /* Main.storyboard */; };
 		B583E7A52112E92B0077A01F /* covoiturageV1_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B583E7A32112E92B0077A01F /* covoiturageV1_2.xcdatamodeld */; };
 		B583E7A72112E92C0077A01F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B583E7A62112E92B0077A01F /* Assets.xcassets */; };
 		B583E7AA2112E92C0077A01F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B583E7A82112E92C0077A01F /* LaunchScreen.storyboard */; };
+		B590AC7221342D2700EA5BA1 /* CircuitListVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590AC7121342D2700EA5BA1 /* CircuitListVCTest.swift */; };
+		B590AC7621355BAD00EA5BA1 /* GradientLayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590AC7521355BAD00EA5BA1 /* GradientLayerExtension.swift */; };
+		B590AC7A2135659200EA5BA1 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590AC792135659200EA5BA1 /* UIViewExtension.swift */; };
 		B59996772123216C00406269 /* dropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59996762123216C00406269 /* dropDownView.swift */; };
 		B59996792123218D00406269 /* dropDownBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59996782123218D00406269 /* dropDownBtn.swift */; };
 		B599967C212321ED00406269 /* dropDownProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599967B212321ED00406269 /* dropDownProtocol.swift */; };
@@ -38,10 +42,13 @@
 		B59D7DE32119E5EA009DB04F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59D7DE22119E5EA009DB04F /* AuthService.swift */; };
 		B5B5A99C2112FFC8003E0E75 /* CircuitListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5A99B2112FFC8003E0E75 /* CircuitListVC.swift */; };
 		B5B5A99E211300EC003E0E75 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5A99D211300EC003E0E75 /* MenuVC.swift */; };
+		B5BEA7B52126E6020037B242 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BEA7B42126E6020037B242 /* DetailVC.swift */; };
+		B5BEA7B72126E70F0037B242 /* CellTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BEA7B62126E70F0037B242 /* CellTableView.swift */; };
 		B5DFEAF2211857CE0057784C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DFEAF1211857CE0057784C /* MenuView.swift */; };
 		B5DFEAF5211882FE0057784C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DFEAF4211882FE0057784C /* UIColorExtension.swift */; };
 		B5DFEAF7211885310057784C /* SearchCircuitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DFEAF6211885310057784C /* SearchCircuitVC.swift */; };
 		B5DFEAFB211886A90057784C /* AddACircuitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DFEAFA211886A90057784C /* AddACircuitVC.swift */; };
+		B5ECEB4D2134168A005B23D6 /* AddACircuitVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECEB4C2134168A005B23D6 /* AddACircuitVCTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +70,7 @@
 		B560D41D2118A9EA000E0E46 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		B560D4202119D033000E0E46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B560D4232119D292000E0E46 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		B56D49F9213329E500639A27 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		B583E7992112E92B0077A01F /* covoiturageV1_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = covoiturageV1_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B583E79C2112E92B0077A01F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B583E7A12112E92B0077A01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -70,6 +78,9 @@
 		B583E7A62112E92B0077A01F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B583E7A92112E92C0077A01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B583E7AB2112E92C0077A01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B590AC7121342D2700EA5BA1 /* CircuitListVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitListVCTest.swift; sourceTree = "<group>"; };
+		B590AC7521355BAD00EA5BA1 /* GradientLayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayerExtension.swift; sourceTree = "<group>"; };
+		B590AC792135659200EA5BA1 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		B59996762123216C00406269 /* dropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownView.swift; sourceTree = "<group>"; };
 		B59996782123218D00406269 /* dropDownBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownBtn.swift; sourceTree = "<group>"; };
 		B599967B212321ED00406269 /* dropDownProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownProtocol.swift; sourceTree = "<group>"; };
@@ -80,10 +91,13 @@
 		B59D7DE22119E5EA009DB04F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B5B5A99B2112FFC8003E0E75 /* CircuitListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitListVC.swift; sourceTree = "<group>"; };
 		B5B5A99D211300EC003E0E75 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		B5BEA7B42126E6020037B242 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		B5BEA7B62126E70F0037B242 /* CellTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableView.swift; sourceTree = "<group>"; };
 		B5DFEAF1211857CE0057784C /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		B5DFEAF4211882FE0057784C /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		B5DFEAF6211885310057784C /* SearchCircuitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCircuitVC.swift; sourceTree = "<group>"; };
 		B5DFEAFA211886A90057784C /* AddACircuitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddACircuitVC.swift; sourceTree = "<group>"; };
+		B5ECEB4C2134168A005B23D6 /* AddACircuitVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddACircuitVCTest.swift; sourceTree = "<group>"; };
 		CB7EE4E961AC71ACD9135830 /* Pods-covoiturageV1_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-covoiturageV1_2.release.xcconfig"; path = "Pods/Target Support Files/Pods-covoiturageV1_2/Pods-covoiturageV1_2.release.xcconfig"; sourceTree = "<group>"; };
 		E71ADE4D2AFCB17717B0D256 /* Pods_covoiturageV1_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_covoiturageV1_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -137,10 +151,13 @@
 				B5280E8F2112102D00A0D22A /* AuthVC.swift */,
 				B5280E912112105300A0D22A /* InscriptionVC.swift */,
 				B5B5A99B2112FFC8003E0E75 /* CircuitListVC.swift */,
-				B5B5A99D211300EC003E0E75 /* MenuVC.swift */,
 				B5DFEAF6211885310057784C /* SearchCircuitVC.swift */,
 				B5DFEAFA211886A90057784C /* AddACircuitVC.swift */,
 				B59996C42126DA7C00406269 /* testViewController.swift */,
+				B5BEA7B42126E6020037B242 /* DetailVC.swift */,
+				B5BEA7B62126E70F0037B242 /* CellTableView.swift */,
+				B5ECEB4C2134168A005B23D6 /* AddACircuitVCTest.swift */,
+				B590AC7121342D2700EA5BA1 /* CircuitListVCTest.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -196,6 +213,7 @@
 				B560D4222119D281000E0E46 /* Services */,
 				B560D4202119D033000E0E46 /* GoogleService-Info.plist */,
 				B5DFEAF3211882E00057784C /* Extensions */,
+				B5B5A99D211300EC003E0E75 /* MenuVC.swift */,
 				B5DFEAF0211857830057784C /* View */,
 				B5280E8C21120FEE00A0D22A /* Controllers */,
 				B5280E8721120A7900A0D22A /* Supporting Files */,
@@ -242,6 +260,9 @@
 			isa = PBXGroup;
 			children = (
 				B5DFEAF4211882FE0057784C /* UIColorExtension.swift */,
+				B56D49F9213329E500639A27 /* UIImageViewExtension.swift */,
+				B590AC7521355BAD00EA5BA1 /* GradientLayerExtension.swift */,
+				B590AC792135659200EA5BA1 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -409,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B59996772123216C00406269 /* dropDownView.swift in Sources */,
+				B5BEA7B72126E70F0037B242 /* CellTableView.swift in Sources */,
 				B5DFEAF7211885310057784C /* SearchCircuitVC.swift in Sources */,
 				B5280E902112102D00A0D22A /* AuthVC.swift in Sources */,
 				B599967C212321ED00406269 /* dropDownProtocol.swift in Sources */,
@@ -422,18 +444,24 @@
 				B536C04C211DC4C800808318 /* CellView.swift in Sources */,
 				B5280E8E2112100600A0D22A /* FirstVC.swift in Sources */,
 				B536C04E211DC4CD00808318 /* AnimationClass.swift in Sources */,
+				B56D49FA213329E500639A27 /* UIImageViewExtension.swift in Sources */,
 				B536C04A211DC4C200808318 /* CalendarPopUp.swift in Sources */,
 				B5DFEAFB211886A90057784C /* AddACircuitVC.swift in Sources */,
 				B59D7DE32119E5EA009DB04F /* AuthService.swift in Sources */,
 				B536C054211DC4EA00808318 /* Extensions.swift in Sources */,
+				B5ECEB4D2134168A005B23D6 /* AddACircuitVCTest.swift in Sources */,
 				B5DFEAF5211882FE0057784C /* UIColorExtension.swift in Sources */,
 				B59996BF212461CD00406269 /* Annonce.swift in Sources */,
 				B560D4242119D292000E0E46 /* DataService.swift in Sources */,
+				B590AC7A2135659200EA5BA1 /* UIViewExtension.swift in Sources */,
 				B5B5A99C2112FFC8003E0E75 /* CircuitListVC.swift in Sources */,
 				B599967E21241F4700406269 /* PickerService.swift in Sources */,
+				B5BEA7B52126E6020037B242 /* DetailVC.swift in Sources */,
 				B59996C12124ECCC00406269 /* SessionManager.swift in Sources */,
 				B5280E8B21120AD500A0D22A /* SWRevealViewController.m in Sources */,
+				B590AC7221342D2700EA5BA1 /* CircuitListVCTest.swift in Sources */,
 				B59996792123218D00406269 /* dropDownBtn.swift in Sources */,
+				B590AC7621355BAD00EA5BA1 /* GradientLayerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
