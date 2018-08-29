@@ -77,7 +77,7 @@ class DataService {
                             let annonce  = Annonce(fromName: fromName as! String, fromLatitude: fromLatitude as! Double, fromLongitude: fromLongitude as! Double, toName: toName as! String, toLatitude: toLatitude as! Double, toLongitude: toLongitude as! Double, date: date as! String, hourMinute: hourMinute as! String, mark: mark as! String, model: model as! String, numberOfplaces: numberOfplaces as! String, Uprice: Uprice as! String, ps: ps as! String, userInfo : userInfo as! [String : Any])
                             annonce.userPicture  = userImg
                             listAdverts.append(annonce)
-                            print("Dans getAllAdverts , nombre des anoonces est : \(listAdverts.count)")
+                            //print("Dans getAllAdverts , nombre des anoonces est : \(listAdverts.count)")
                         completion(listAdverts)
                     }
                 }

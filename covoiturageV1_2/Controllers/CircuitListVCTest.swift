@@ -3,6 +3,7 @@ import  FirebaseDatabase
 class CircuitListVCTest: UIViewController , UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var listAdverts: UITableView!
+    @IBOutlet weak var searchView : UIView!
     var databaseHandle : DatabaseHandle?
     var annoces : [Annonce]  = []
     let DB_BASE = Database.database().reference()
@@ -11,6 +12,10 @@ class CircuitListVCTest: UIViewController , UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         self.listAdverts.delegate = self
         self.listAdverts.dataSource = self
+        self.listAdverts.isUserInteractionEnabled = true
+        self.listAdverts.allowsSelection = true
+        //        listAdverts.rowHeight = UITableViewAutomaticDimension
+        //        listAdverts.estimatedRowHeight = 253
         DataService.instance.getAllAdverts(completion: reloadList)
     }
 
@@ -19,35 +24,77 @@ class CircuitListVCTest: UIViewController , UITableViewDelegate, UITableViewData
         listAdverts.reloadData()
     }
 
-//
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 300
-//    }
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 96
+
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //print("le nombre des cellul est : \(annoces.count)")
         return  annoces.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellCell", for: indexPath) as! CellTableViewTestTableViewCell
+        cell.fromLbl.text = annoces[indexPath.row].fromName
+        cell.hourLbl.text = annoces[indexPath.row].hourMinute
+        cell.toLbl.text = annoces[indexPath.row].toName
+        cell.numberPlacesLbl.text = annoces[indexPath.row].numberOfplaces
+        if let price  : String = annoces[indexPath.row].Uprice{
+            cell.priceLbl.text = "\(price) dt"
+        }
+        cell.dateLbl.text = annoces[indexPath.row].date
+        cell.userImg.image = annoces [indexPath.row].userPicture?.image
+        cell.userImg.roundedImage()
+        cell.cellView.roundedViewCell(cornerRadius: (Double(cell.cellView.frame.size.height / 2)))
+        cell.priceViewCell.roundedPricePersonViewCell()
+        cell.nPlacesViewCell.roundedPricePersonViewCell()
+        return cell
+    }
 
-        if  let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CellTableView{
-//            cell.fromLbl.text = annoces[indexPath.row].fromName
-//            cell.hourLbl.text = annoces[indexPath.row].hourMinute
-//            cell.toLbl.text = annoces[indexPath.row].toName
-//            cell.numberPlacesLbl.text = annoces[indexPath.row].numberOfplaces
-//            cell.priceLbl.text = annoces[indexPath.row].Uprice
-//            cell.dateLbl.text = annoces[indexPath.row].date
-            cell.userImg.image = annoces [indexPath.row].userPicture?.image
-            cell.userImg.roundedImage()
-            return cell
-        }else{
-            return CellTableView()
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+            let detail = mainStoryBoard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+            detail.From = annoces[indexPath.row].fromName!
+                    detail.To = annoces[indexPath.row].toName!
+                    detail.Date = annoces[indexPath.row].date!
+                    detail.Hour = annoces[indexPath.row].hourMinute!
+                    detail.numberOfPlaces = Int(annoces[indexPath.row].numberOfplaces!)!
+                    detail.UPrice = Int(annoces[indexPath.row].Uprice!)!
+                    detail.From = annoces[indexPath.row].fromName!
+    
+                    detail.annonce = annoces[indexPath.row]
+            print(indexPath.row)
+                     //self.navigationController?.pushViewController(detail, animated: true)
+            self.present(detail, animated: true, completion: nil)
+        }
+
+
+
+
+    @IBAction func onSearchIconPressed(_ sender: Any) {
+        self.searchView.isHidden = false
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        var touch: UITouch? = touches.first
+        if touch?.view != self.searchView {
+            self.searchView.isHidden = true
         }
     }
 
 
-
+    @IBAction func onMenuIconPressed(_ sender: Any) {
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        let listAdvertsVC = mainStoryBoard.instantiateViewController(withIdentifier: "CircuitListVCTest") as! CircuitListVCTest
+        self.searchView.isHidden = true
+        self.navigationController?.pushViewController(listAdvertsVC, animated: true)
+    }
+    @IBAction func onProfilIconPressed(_ sender: Any) {
+    }
 }
-
 

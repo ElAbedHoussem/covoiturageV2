@@ -32,6 +32,7 @@
 		B590AC7221342D2700EA5BA1 /* CircuitListVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590AC7121342D2700EA5BA1 /* CircuitListVCTest.swift */; };
 		B590AC7621355BAD00EA5BA1 /* GradientLayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590AC7521355BAD00EA5BA1 /* GradientLayerExtension.swift */; };
 		B590AC7A2135659200EA5BA1 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590AC792135659200EA5BA1 /* UIViewExtension.swift */; };
+		B590AC7C21368CAC00EA5BA1 /* CellTableViewTestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590AC7B21368CAC00EA5BA1 /* CellTableViewTestTableViewCell.swift */; };
 		B59996772123216C00406269 /* dropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59996762123216C00406269 /* dropDownView.swift */; };
 		B59996792123218D00406269 /* dropDownBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59996782123218D00406269 /* dropDownBtn.swift */; };
 		B599967C212321ED00406269 /* dropDownProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599967B212321ED00406269 /* dropDownProtocol.swift */; };
@@ -81,6 +82,7 @@
 		B590AC7121342D2700EA5BA1 /* CircuitListVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitListVCTest.swift; sourceTree = "<group>"; };
 		B590AC7521355BAD00EA5BA1 /* GradientLayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayerExtension.swift; sourceTree = "<group>"; };
 		B590AC792135659200EA5BA1 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		B590AC7B21368CAC00EA5BA1 /* CellTableViewTestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableViewTestTableViewCell.swift; sourceTree = "<group>"; };
 		B59996762123216C00406269 /* dropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownView.swift; sourceTree = "<group>"; };
 		B59996782123218D00406269 /* dropDownBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownBtn.swift; sourceTree = "<group>"; };
 		B599967B212321ED00406269 /* dropDownProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownProtocol.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				B5BEA7B62126E70F0037B242 /* CellTableView.swift */,
 				B5ECEB4C2134168A005B23D6 /* AddACircuitVCTest.swift */,
 				B590AC7121342D2700EA5BA1 /* CircuitListVCTest.swift */,
+				B590AC7B21368CAC00EA5BA1 /* CellTableViewTestTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				B536C04E211DC4CD00808318 /* AnimationClass.swift in Sources */,
 				B56D49FA213329E500639A27 /* UIImageViewExtension.swift in Sources */,
 				B536C04A211DC4C200808318 /* CalendarPopUp.swift in Sources */,
+				B590AC7C21368CAC00EA5BA1 /* CellTableViewTestTableViewCell.swift in Sources */,
 				B5DFEAFB211886A90057784C /* AddACircuitVC.swift in Sources */,
 				B59D7DE32119E5EA009DB04F /* AuthService.swift in Sources */,
 				B536C054211DC4EA00808318 /* Extensions.swift in Sources */,

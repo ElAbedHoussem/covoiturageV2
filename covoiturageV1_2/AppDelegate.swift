@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else{
             AuthService.instance.saveUserInSessionManager(Mail:  (Auth.auth().currentUser?.email)!)
-            let ListCircuitVC = storyboard.instantiateViewController(withIdentifier: "CircuitListVC") as! CircuitListVC
+            let ListCircuitVC = storyboard.instantiateViewController(withIdentifier: "CircuitListVCTest") as! CircuitListVCTest
             window?.makeKeyAndVisible()
             window?.rootViewController?.present(ListCircuitVC, animated: true, completion: nil)
         }

@@ -11,8 +11,6 @@ class CircuitListVC: UIViewController , UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         self.listAdverts.delegate = self
         self.listAdverts.dataSource = self
-//        listAdverts.rowHeight = UITableViewAutomaticDimension
-//        listAdverts.estimatedRowHeight = 253
         DataService.instance.getAllAdverts(completion: reloadList)
     }
     func reloadList(annonces : [Annonce]){
@@ -20,14 +18,12 @@ class CircuitListVC: UIViewController , UITableViewDelegate, UITableViewDataSour
         listAdverts.reloadData()
     }
 
-
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 96
 
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //print("le nombre des cellul est : \(annoces.count)")
         return  annoces.count
     }
 
@@ -37,47 +33,37 @@ class CircuitListVC: UIViewController , UITableViewDelegate, UITableViewDataSour
             cell.hourLbl.text = annoces[indexPath.row].hourMinute
             cell.toLbl.text = annoces[indexPath.row].toName
             cell.numberPlacesLbl.text = annoces[indexPath.row].numberOfplaces
-//        if let nbrp : Int = Int(annoces[indexPath.row].numberOfplaces!) as? Int{
-//                if nbrp > 2 {
-//                    cell.numberPlacesLbl.textColor = UIColor.green
-//                }
-//                else{
-//                    if  nbrp > 0 && nbrp <= 2 {
-//                        cell.numberPlacesLbl.textColor  = UIColor.red
-//                    }else{
-//                        cell.numberPlacesLbl.text = " y a plus de place"
-//                        cell.numberPlacesLbl.textColor  = UIColor.red
-//                    }
-//                }
-//            }
             if let price  : String = annoces[indexPath.row].Uprice{
                 cell.priceLbl.text = "\(price) dt"
             }
             cell.dateLbl.text = annoces[indexPath.row].date
             cell.userImg.image = annoces [indexPath.row].userPicture?.image
             cell.userImg.roundedImage()
-        cell.cellView.roundedViewCell(cornerRadius: (Double(cell.cellView.frame.size.height / 2)))
+            cell.cellView.roundedViewCell(cornerRadius: (Double(cell.cellView.frame.size.height / 2)))
             cell.priceViewCell.roundedPricePersonViewCell()
             cell.nPlacesViewCell.roundedPricePersonViewCell()
             return cell
     }
 
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+//        let detail = mainStoryBoard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+//        detail.From = annoces[indexPath.row].fromName!
+//                detail.To = annoces[indexPath.row].toName!
+//                detail.Date = annoces[indexPath.row].date!
+//                detail.Hour = annoces[indexPath.row].hourMinute!
+//                detail.numberOfPlaces = Int(annoces[indexPath.row].numberOfplaces!)!
+//                detail.UPrice = Int(annoces[indexPath.row].Uprice!)!
+//                detail.From = annoces[indexPath.row].fromName!
+//
+//                detail.annonce = annoces[indexPath.row]
+//        print(indexPath.row)
+//                 //self.navigationController?.pushViewController(detail, animated: true)
+//        self.present(detail, animated: true, completion: nil)
+//    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-        let detail = mainStoryBoard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
-        detail.From = annoces[indexPath.row].fromName!
-                detail.To = annoces[indexPath.row].toName!
-                detail.Date = annoces[indexPath.row].date!
-                detail.Hour = annoces[indexPath.row].hourMinute!
-                detail.numberOfPlaces = Int(annoces[indexPath.row].numberOfplaces!)!
-                detail.UPrice = Int(annoces[indexPath.row].Uprice!)!
-                detail.From = annoces[indexPath.row].fromName!
-
-                detail.annonce = annoces[indexPath.row]
-        print(indexPath.row)
-                 //self.navigationController?.pushViewController(detail, animated: true)
-        self.present(detail, animated: true, completion: nil)
+        print("123")
     }
-
 }
 
