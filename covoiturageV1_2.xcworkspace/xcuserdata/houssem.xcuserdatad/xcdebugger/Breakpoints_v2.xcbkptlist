@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "covoiturageV1_2/Controllers/InscriptionVC.swift"
-            timestampString = "555526921.631958"
+            filePath = "covoiturageV1_2/Controllers/AddACircuitVC.swift"
+            timestampString = "556793119.968733"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "takePhoto(_:)"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "onDeposerWasPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,14 +25,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "covoiturageV1_2/Controllers/MenuVC.swift"
-            timestampString = "555526921.632041"
+            filePath = "covoiturageV1_2/Controllers/AddACircuitVC.swift"
+            timestampString = "556793119.968992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
-            landmarkName = "MenuVC"
-            landmarkType = "3">
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "onDeposerWasPressed(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -41,13 +41,75 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "covoiturageV1_2/Controllers/AddACircuitVC.swift"
-            timestampString = "555945916.10622"
+            filePath = "covoiturageV1_2/Controllers/testViewController.swift"
+            timestampString = "556714534.816697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
-            landmarkName = "performSearch(isBegin:)"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "didReceiveMemoryWarning()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "covoiturageV1_2/Controllers/CircuitListVC.swift"
+            timestampString = "557330806.429728"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "covoiturageV1_2/Controllers/DetailVC.swift"
+            timestampString = "557330806.429925"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "fillTheBlancs()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "covoiturageV1_2/Controllers/CircuitListVCTest.swift"
+            timestampString = "557330806.430495"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "covoiturageV1_2/Controllers/CircuitListVCTest.swift"
+            timestampString = "557330806.4312609"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "reloadList(annonces:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
