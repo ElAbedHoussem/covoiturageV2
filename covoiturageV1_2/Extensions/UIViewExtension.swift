@@ -24,4 +24,12 @@ extension UIView {
         maskLayer.path = path.cgPath
         self.layer.mask = maskLayer
     }
+    func roundedAdvertDetailsView(){
+        self.layer.cornerRadius = 20
+        self.clipsToBounds = true
+    }
+    func roundedButton(){
+        self.layer.cornerRadius = 5
+        self.clipsToBounds = true
+    }
 }

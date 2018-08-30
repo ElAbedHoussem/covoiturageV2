@@ -4,6 +4,9 @@ class CircuitListVCTest: UIViewController , UITableViewDelegate, UITableViewData
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var listAdverts: UITableView!
     @IBOutlet weak var searchView : UIView!
+    @IBOutlet weak var spinnerView : UIView!
+    @IBOutlet weak var loadingTableIndicator :UIActivityIndicatorView!
+      var currentOffset : CGPoint?
     var databaseHandle : DatabaseHandle?
     var annoces : [Annonce]  = []
     let DB_BASE = Database.database().reference()
@@ -14,14 +17,17 @@ class CircuitListVCTest: UIViewController , UITableViewDelegate, UITableViewData
         self.listAdverts.dataSource = self
         self.listAdverts.isUserInteractionEnabled = true
         self.listAdverts.allowsSelection = true
-        //        listAdverts.rowHeight = UITableViewAutomaticDimension
-        //        listAdverts.estimatedRowHeight = 253
+        //loadingTableIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+
+        loadingTableIndicator.startAnimating()
         DataService.instance.getAllAdverts(completion: reloadList)
+
     }
 
     func reloadList(annonces : [Annonce]){
         self.annoces = annonces
         listAdverts.reloadData()
+        loadingTableIndicator.stopAnimating()
     }
 
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -53,10 +59,13 @@ class CircuitListVCTest: UIViewController , UITableViewDelegate, UITableViewData
         cell.cellView.roundedViewCell(cornerRadius: (Double(cell.cellView.frame.size.height / 2)))
         cell.priceViewCell.roundedPricePersonViewCell()
         cell.nPlacesViewCell.roundedPricePersonViewCell()
+        if indexPath.row == annoces.count{
+            
+        }
         return cell
     }
 
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
             let detail = mainStoryBoard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
             detail.From = annoces[indexPath.row].fromName!
@@ -71,20 +80,6 @@ class CircuitListVCTest: UIViewController , UITableViewDelegate, UITableViewData
             print(indexPath.row)
                      //self.navigationController?.pushViewController(detail, animated: true)
             self.present(detail, animated: true, completion: nil)
-        }
-
-
-
-
-    @IBAction func onSearchIconPressed(_ sender: Any) {
-        self.searchView.isHidden = false
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        var touch: UITouch? = touches.first
-        if touch?.view != self.searchView {
-            self.searchView.isHidden = true
-        }
     }
 
 
@@ -94,7 +89,44 @@ class CircuitListVCTest: UIViewController , UITableViewDelegate, UITableViewData
         self.searchView.isHidden = true
         self.navigationController?.pushViewController(listAdvertsVC, animated: true)
     }
+
     @IBAction func onProfilIconPressed(_ sender: Any) {
     }
+
+    @IBAction func onSearchIconPressed(_ sender: Any) {
+        if self.searchView.isHidden {
+            self.moveTableViewDown()
+        }else{
+            self.moveTableViewToOriginalPosition()
+        }
+        self.searchView.isHidden = !self.searchView.isHidden
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            if (touch.view != self.searchView && !self.searchView.isHidden) {
+                self.moveTableViewDown()
+                self.searchView.isHidden = !self.searchView.isHidden
+            }
+        }
+    }
+
+    func moveTableViewDown() {
+        DispatchQueue.main.async {
+            self.currentOffset = self.listAdverts.contentOffset // saving current position of tableView
+            let maxY = self.listAdverts.contentOffset.y
+            let offset = CGPoint.init(x: 0, y: maxY-self.searchView.frame.height) // set moving up value
+            self.listAdverts.setContentOffset(offset, animated: false)
+        }
+    }
+
+    func moveTableViewToOriginalPosition() {
+        DispatchQueue.main.async {
+            self.listAdverts.contentOffset =  self.currentOffset!
+        }
+    }
+
+
+
 }
 

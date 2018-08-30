@@ -21,6 +21,10 @@ class DetailVC: UIViewController {
     @IBOutlet weak var age: UILabel!
     @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var infoDriverView : UIView!
+    @IBOutlet weak var advertInfoView : UIView!
+    @IBOutlet weak var chatBtn : UIButton!
+    @IBOutlet weak var  reserve : UIButton!
     var toDataUserPicture : Data?
 
     var PS : String = ""
@@ -40,6 +44,10 @@ class DetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.infoDriverView.roundedAdvertDetailsView()
+        self.advertInfoView.roundedAdvertDetailsView()
+        self.chatBtn.roundedButton()
+        self.reserve.roundedButton()
         extractData()
         fillTheBlancs()
     }
