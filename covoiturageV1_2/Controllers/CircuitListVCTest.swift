@@ -4,7 +4,6 @@ class CircuitListVCTest: UIViewController , UITableViewDelegate, UITableViewData
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var listAdverts: UITableView!
     @IBOutlet weak var searchView : UIView!
-    @IBOutlet weak var spinnerView : UIView!
     @IBOutlet weak var loadingTableIndicator :UIActivityIndicatorView!
       var currentOffset : CGPoint?
     var databaseHandle : DatabaseHandle?
@@ -59,26 +58,22 @@ class CircuitListVCTest: UIViewController , UITableViewDelegate, UITableViewData
         cell.cellView.roundedViewCell(cornerRadius: (Double(cell.cellView.frame.size.height / 2)))
         cell.priceViewCell.roundedPricePersonViewCell()
         cell.nPlacesViewCell.roundedPricePersonViewCell()
-        if indexPath.row == annoces.count{
-            
-        }
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
             let detail = mainStoryBoard.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
-            detail.From = annoces[indexPath.row].fromName!
+                    detail.idUser = annoces[indexPath.row].driverID!
+                    detail.idAdvert = annoces[indexPath.row].annonceId!
+                    detail.From = annoces[indexPath.row].fromName!
                     detail.To = annoces[indexPath.row].toName!
                     detail.Date = annoces[indexPath.row].date!
                     detail.Hour = annoces[indexPath.row].hourMinute!
                     detail.numberOfPlaces = Int(annoces[indexPath.row].numberOfplaces!)!
                     detail.UPrice = Int(annoces[indexPath.row].Uprice!)!
                     detail.From = annoces[indexPath.row].fromName!
-    
                     detail.annonce = annoces[indexPath.row]
-            print(indexPath.row)
-                     //self.navigationController?.pushViewController(detail, animated: true)
             self.present(detail, animated: true, completion: nil)
     }
 
@@ -92,6 +87,19 @@ class CircuitListVCTest: UIViewController , UITableViewDelegate, UITableViewData
 
     @IBAction func onProfilIconPressed(_ sender: Any) {
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        DataService.instance.getAllAdverts(completion: reloadList)
+    }
+
+
+
+
+
+
+
+
+
 
     @IBAction func onSearchIconPressed(_ sender: Any) {
         if self.searchView.isHidden {

@@ -27,6 +27,8 @@ class DetailVC: UIViewController {
     @IBOutlet weak var  reserve : UIButton!
     var toDataUserPicture : Data?
 
+    var idUser : String = ""
+    var idAdvert : String = ""
     var PS : String = ""
     var Hour : String = ""
     var Date : String = ""
@@ -50,12 +52,41 @@ class DetailVC: UIViewController {
         self.reserve.roundedButton()
         extractData()
         fillTheBlancs()
+        if UPrice == 0 {
+            chatBtn.isEnabled = false
+            chatBtn.alpha = 0.3
+            reserve.isEnabled = false
+            reserve.alpha = 0.3
+            self.nbrPlaces.textColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        }
+    }
+
+    @IBAction func onReturnWasPressed(_ sender: UIButton) {
+       self.dismiss(animated: true)
     }
 
     @IBAction func onReserveWasPressed(_ sender: UIButton) {
+        DataService.instance.reserve(advertKey: idAdvert, newNbrPlaces: (self.numberOfPlaces-1) , idClient: idUser, completion: afterReserve)
+    }
+
+    func afterReserve( resUpdate : Bool){
+        if resUpdate{
+            print("ok")
+            let alert = UIAlertController(title: "Succes", message: "succes de reservation, soyer au rendez vous :)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true)
+        }else{
+            print("not ok")
+            let alert = UIAlertController(title: "Erreur", message: "Erreur de reservation", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
     }
     
     @IBAction func onCommunicateWasPressed(_ sender: Any) {
+        print(456)
     }
 
     func extractData(){
@@ -85,13 +116,9 @@ class DetailVC: UIViewController {
         self.to.text = To
         self.date.text = Date
         self.ps.text = PS
-        self.Uprice.text = String(UPrice)
-        self.nbrPlaces.text = String(numberOfPlaces)
+        self.Uprice.text = "\(String(UPrice)) Dinars"
+        self.nbrPlaces.text = "\(String(numberOfPlaces)) restantes "
         self.hour.text = Hour
-
-
-
-
-
     }
+    
 }

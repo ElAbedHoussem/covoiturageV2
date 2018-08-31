@@ -13,11 +13,13 @@ import  FirebaseAuth
 import FBSDKCoreKit
 import  GooglePlaces
 import  GoogleMaps
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var player : AVAudioPlayer!
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -28,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyDz8iyBNbDByJ5phu0-XkMx_tt5DEr_2CM")
         GMSPlacesClient.provideAPIKey("AIzaSyDz8iyBNbDByJ5phu0-XkMx_tt5DEr_2CM")
         
-        
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if Auth.auth().currentUser == nil {
             let authVC = storyboard.instantiateViewController(withIdentifier: "AuthVC") as! AuthVC
@@ -38,6 +40,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else{
             AuthService.instance.saveUserInSessionManager(Mail:  (Auth.auth().currentUser?.email)!)
             let ListCircuitVC = storyboard.instantiateViewController(withIdentifier: "CircuitListVCTest") as! CircuitListVCTest
+            //play a music
+            let path = Bundle.main.path(forResource: "car+start3", ofType: "wav")!
+            let url = URL(fileURLWithPath: path)
+            do{
+                player = try AVAudioPlayer(contentsOf: url)
+                player.prepareToPlay()
+            }catch let error as NSError{
+                print(error.description)
+            }
+            player.play()
+            //End playing music
             window?.makeKeyAndVisible()
             window?.rootViewController?.present(ListCircuitVC, animated: true, completion: nil)
         }

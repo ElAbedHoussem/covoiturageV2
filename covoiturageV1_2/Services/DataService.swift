@@ -45,39 +45,41 @@ class DataService {
     }
 
     func getAllAdverts (completion : @escaping ([Annonce])->()){
-        var i = 0
          var listAdverts : [Annonce] = [Annonce]()
                 REF_ADVERTS.observe(DataEventType.value, with: { (snapshot) in
                     if snapshot.childrenCount > 0 {
                         for advert in snapshot.children.allObjects as! [DataSnapshot] {
-                            let advertInfo  = advert.value as? [String : AnyObject]
-                            let fromName = advertInfo?["fromName"]
-                            let fromLatitude = advertInfo?["fromLatitude"]
-                            let fromLongitude  = advertInfo?["fromLongitude"]
-                            let  toName = advertInfo?["toName"]
-                            let toLatitude = advertInfo?["toLatitude"]
-                            let toLongitude = advertInfo?["toLongitude"]
-                            let date = advertInfo?["date"]
-                            let hourMinute = advertInfo?["hourMinute"]
-                            let mark = advertInfo?["mark"]
-                            let model = advertInfo?["model"]
-                            let numberOfplaces = advertInfo?["numberOfplaces"]
-                            let Uprice = advertInfo?["numberOfplaces"]
-                            let ps = advertInfo?["ps"]
-                            let userInfo = advertInfo?["userInformation"]
-                            var userID = ""
-                            var userImg = UIImageView()
-                            for (key , val ) in (userInfo as? [String : Any])!{
-                                if key == "userID"{
-                                    if let userID : String = val as! String{
-                                        userImg = self.getPicture(pictureURL: userID)
+                            if let advertKey : String = advert.key as! String{
+                                    print("conversion de advertKey ok")
+                                let advertInfo  = advert.value as? [String : AnyObject]
+                                let fromName = advertInfo?["fromName"]
+                                let fromLatitude = advertInfo?["fromLatitude"]
+                                let fromLongitude  = advertInfo?["fromLongitude"]
+                                let  toName = advertInfo?["toName"]
+                                let toLatitude = advertInfo?["toLatitude"]
+                                let toLongitude = advertInfo?["toLongitude"]
+                                let date = advertInfo?["date"]
+                                let hourMinute = advertInfo?["hourMinute"]
+                                let mark = advertInfo?["mark"]
+                                let model = advertInfo?["model"]
+                                let numberOfplaces = advertInfo?["numberOfplaces"]
+                                let Uprice = advertInfo?["Uprice"]
+                                let ps = advertInfo?["ps"]
+                                let userInfo = advertInfo?["userInformation"]
+                                var userImg = UIImageView()
+                                for (key , val ) in (userInfo as? [String : Any])!{
+                                    if key == "userID"{
+                                        if let userID : String = val as! String{
+                                            userImg = self.getPicture(pictureURL: userID)
+                                        }
                                     }
                                 }
+                                let annonce  = Annonce(advertID : advertKey as! String ,fromName: fromName as! String, fromLatitude: fromLatitude as! Double, fromLongitude: fromLongitude as! Double, toName: toName as! String, toLatitude: toLatitude as! Double, toLongitude: toLongitude as! Double, date: date as! String, hourMinute: hourMinute as! String, mark: mark as! String, model: model as! String, numberOfplaces: numberOfplaces as! String, Uprice: Uprice as! String, ps: ps as! String, userInfo : userInfo as! [String : Any])
+                                annonce.userPicture  = userImg
+                                listAdverts.append(annonce)
+                                //print("Dans getAllAdverts , nombre des anoonces est : \(listAdverts.count)")
                             }
-                            let annonce  = Annonce(fromName: fromName as! String, fromLatitude: fromLatitude as! Double, fromLongitude: fromLongitude as! Double, toName: toName as! String, toLatitude: toLatitude as! Double, toLongitude: toLongitude as! Double, date: date as! String, hourMinute: hourMinute as! String, mark: mark as! String, model: model as! String, numberOfplaces: numberOfplaces as! String, Uprice: Uprice as! String, ps: ps as! String, userInfo : userInfo as! [String : Any])
-                            annonce.userPicture  = userImg
-                            listAdverts.append(annonce)
-                            //print("Dans getAllAdverts , nombre des anoonces est : \(listAdverts.count)")
+
                         completion(listAdverts)
                     }
                 }
@@ -100,4 +102,20 @@ class DataService {
         return userImg
     }
 
+
+    func reserve (advertKey : String , newNbrPlaces : Int , idClient : String , completion : @escaping (Bool)->()){
+
+        print("dans reserve")
+        let advertIDRef = REF_ADVERTS.child(advertKey)
+        advertIDRef.updateChildValues(["numberOfplaces": "\(newNbrPlaces)"]) { (error, succes) in
+            if error == nil {
+
+                completion(true)
+            }else{
+                print(error)
+                completion(false)
+            }
+        }
+
+    }
 }

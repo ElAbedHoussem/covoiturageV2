@@ -25,6 +25,7 @@ class Annonce{
     var driverInfo : [String : Any]?
     var userPicture : UIImageView?
     var driverID : String?
+    var annonceId : String?
 
     init(){}
 
@@ -74,29 +75,32 @@ class Annonce{
     }
 
     // ce constructeur est appelé seuelemtn lorsque on veut recuperer tous les annonces "getAllAdverts()"
-    init(fromName :String!, fromLatitude : Double ,fromLongitude : Double, toName : String, toLatitude : Double , toLongitude : Double, date : String, hourMinute : String , mark : String , model : String , numberOfplaces : String , Uprice : String , ps : String , userInfo : [String : Any] ) {
-        self.fromName = fromName
-        self.fromLatitude = fromLatitude
-        self.fromLongitude = fromLongitude
+    init(advertID : String ,fromName :String!, fromLatitude : Double ,fromLongitude : Double, toName : String, toLatitude : Double , toLongitude : Double, date : String, hourMinute : String , mark : String , model : String , numberOfplaces : String , Uprice : String , ps : String , userInfo : [String : Any] ) {
+        if let advertIDString : String = advertID as! String{
+            self.annonceId = advertIDString
+            self.fromName = fromName
+            self.fromLatitude = fromLatitude
+            self.fromLongitude = fromLongitude
 
-        self.toName = toName
-        self.toLatitude = toLatitude
-        self.toLongitude = toLongitude
+            self.toName = toName
+            self.toLatitude = toLatitude
+            self.toLongitude = toLongitude
 
-        self.date = date
-        self.hourMinute = hourMinute
+            self.date = date
+            self.hourMinute = hourMinute
 
-        self.mark = mark
-        self.model = model
-        self.numberOfplaces = numberOfplaces
-        self.Uprice = Uprice
+            self.mark = mark
+            self.model = model
+            self.numberOfplaces = numberOfplaces
+            self.Uprice = Uprice
 
-        self.ps = ps
-        self.driverInfo = userInfo
-        var userID = ""
-        for (key , val ) in (userInfo as? [String : Any])!{
-            if key == "userID"{
-                self.driverID = val as! String
+            self.ps = ps
+            self.driverInfo = userInfo
+            var userID = ""
+            for (key , val ) in (userInfo as? [String : Any])!{
+                if key == "userID"{
+                    self.driverID = val as! String
+                }
             }
         }
     }
